@@ -21,9 +21,14 @@ def draw_pie_chart(header_row, table_data):
     for header in header_row:
         if (header == ' Test Status'):
             for row in table_data:
-                print(row[i])
+                tally = {}
+                if (tally.has_key(row[i])):
+                    tally[row[i]] += 1
+                else:
+                    tally.update({row[i]: 1})
         else:
             i += 1
+    print tally.items()
 
 def gen_html(head_row, table_data):
     HTMLFILE = 'prysm_output.html'
