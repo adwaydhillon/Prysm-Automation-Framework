@@ -21,11 +21,11 @@ def maintain_tally(header_row, table_data):
     for header in header_row:
         if (header == ' Test Status'):
             for row in table_data:
-                
-                if tally.has_key(row[i]):
-                    tally[row[i]] += 1
-                else:
-                    tally.update({row[i]: 1})
+                if row[i] != '':
+                    if tally.has_key(row[i]):
+                        tally[row[i]] += 1
+                    else:
+                        tally.update({row[i]: 1})
         else:
             i += 1
     #gen_html(header_row, table_data, tally)
