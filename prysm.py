@@ -28,8 +28,7 @@ def maintain_tally(header_row, table_data):
                         tally.update({row[i]: 1})
         else:
             i += 1
-    #gen_html(header_row, table_data, tally)
-    print tally.items()
+    gen_html(header_row, table_data, tally)
 
 def gen_html(head_row, table_data, tally):
     HTMLFILE = 'prysm_output.html'
