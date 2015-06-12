@@ -40,7 +40,6 @@ def gen_html(head_row, table_data):
     f.write('<p>')
     f.close()
 
-
 def main():
     parser = argparse.ArgumentParser(description='Read the file')
     parser.add_argument('fileName', help='Input the filename which has to be read')
