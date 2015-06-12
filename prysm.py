@@ -13,24 +13,23 @@ def readFile(fileName):
             else:
                 table_data.append(row)
             i += 1
-        draw_pie_chart(header_row, table_data)
-        gen_html(header_row, table_data)
+        maintain_tally(header_row, table_data)
 
-def draw_pie_chart(header_row, table_data):
+def maintain_tally(header_row, table_data):
     i = 0
     for header in header_row:
         if (header == ' Test Status'):
             for row in table_data:
                 tally = {}
-                if (tally.has_key(row[i])):
+                if tally.has_key(row[i]):
                     tally[row[i]] += 1
                 else:
                     tally.update({row[i]: 1})
         else:
             i += 1
-    print tally.items()
+    gen_html(header_row, table_data, tally)
 
-def gen_html(head_row, table_data):
+def gen_html(head_row, table_data, tally):
     HTMLFILE = 'prysm_output.html'
     f = open(HTMLFILE, 'w')
     html_table = HTML.Table(table_data,
@@ -39,6 +38,35 @@ def gen_html(head_row, table_data):
     f.write(html_table)
     f.write('<p>')
     f.close()
+#     draw_pie_chart(tally, HTMLFILE)
+
+# def draw_pie_chart(tally, filename):
+#     f = open(HTMLFILE, 'a')
+#     f.write('<html>\n')
+#     f.write('<head>\n')
+#     f.write('<script type="text/javascript" src="https://www.google.com/jsapi"></script>\n')
+#     f.write('<script type="text/javascript">\n')
+#     f.write('google.load("visualization", "1", {packages:["corechart"]});\n')
+#     f.write('google.setOnLoadCallback(drawChart);\n')
+#     f.write('function drawChart() {\n')
+
+
+#     f.write('var data = google.visualization.arrayToDataTable([\n')
+    
+#     f.write(']);\n')
+
+
+#     f.write('var options = {\n')
+#     f.write('title: 'Error Report'\n')
+#     f.write('};\n')
+#     f.write(' var chart = new google.visualization.PieChart(document.getElementById('piechart'));\n')
+#     f.write('chart.draw(data, options);\n')
+#     f.write('</script>\n')
+#     f.write('</head>\n')
+#     f.write('<body>\n')
+#     f.write('<div id="piechart" style="width: 900px; height: 500px;"></div>\n')
+#     f.write('</body>\n')
+#     f.write('</html>\n')
 
 def main():
     parser = argparse.ArgumentParser(description='Read the file')
