@@ -28,9 +28,16 @@ def maintain_tally(header_row, table_data):
                         tally.update({row[i]: 1})
         else:
             i += 1
-    gen_html(header_row, table_data, tally)
 
-def gen_html(head_row, table_data, tally):
+    list_tally =[]
+    list_tally.append(['Test Status', 'Outcomes'])
+    
+    for outcome in tally:
+        list_tally.append([outcome, tally[outcome]])
+    
+    gen_html(header_row, table_data, list_tally)
+
+def gen_html(head_row, table_data, list_tally):
     HTMLFILE = 'prysm_output.html'
     f = open(HTMLFILE, 'w')
     html_table = HTML.Table(table_data,
@@ -40,35 +47,38 @@ def gen_html(head_row, table_data, tally):
     f.write('<p>')
     f.close()
 
-#     draw_pie_chart(tally, HTMLFILE)
+    draw_pie_chart(list_tally, HTMLFILE)
 
-# def draw_pie_chart(tally, filename):
-#     f = open(HTMLFILE, 'a')
-#     f.write('<html>\n')
-#     f.write('<head>\n')
-#     f.write('<script type="text/javascript" src="https://www.google.com/jsapi"></script>\n')
-#     f.write('<script type="text/javascript">\n')
-#     f.write('google.load("visualization", "1", {packages:["corechart"]});\n')
-#     f.write('google.setOnLoadCallback(drawChart);\n')
-#     f.write('function drawChart() {\n')
-
-
-#     f.write('var data = google.visualization.arrayToDataTable([\n')
-
-#     f.write(']);\n')
+def draw_pie_chart(list_tally, filename):
+    f = open(filename, 'a')
+    f.write('\n<html>\n')
+    f.write('<head>\n')
+    f.write('<script type="text/javascript" src="https://www.google.com/jsapi"></script>\n')
+    f.write('<script type="text/javascript">\n')
+    f.write('google.load("visualization", "1", {packages:["corechart"]});\n')
+    f.write('google.setOnLoadCallback(drawChart);\n')
+    f.write('function drawChart() {\n')
 
 
-#     f.write('var options = {\n')
-#     f.write('title: 'Error Report'\n')
-#     f.write('};\n')
-#     f.write(' var chart = new google.visualization.PieChart(document.getElementById('piechart'));\n')
-#     f.write('chart.draw(data, options);\n')
-#     f.write('</script>\n')
-#     f.write('</head>\n')
-#     f.write('<body>\n')
-#     f.write('<div id="piechart" style="width: 900px; height: 500px;"></div>\n')
-#     f.write('</body>\n')
-#     f.write('</html>\n')
+    f.write('var data = google.visualization.arrayToDataTable(\n')
+    f.write(str(list_tally))
+    f.write('\n);\n')
+
+
+    f.write('var options = {\n')
+    f.write('title: \'Error Report\',\n')
+    f.write('is3D: true,\n')
+    f.write('};\n')
+    f.write('var chart = new google.visualization.PieChart(document.getElementById(\'piechart_3d\'));\n')
+    f.write('chart.draw(data, options);\n')
+    f.write('}\n')
+    f.write('</script>\n')
+    f.write('</head>\n')
+    f.write('<body>\n')
+    f.write('<div id="piechart_3d" style="width: 900px; height: 500px;"></div>\n')
+    f.write('</body>\n')
+    f.write('</html>\n')
+    f.close()
 
 def main():
     parser = argparse.ArgumentParser(description='Read the file')

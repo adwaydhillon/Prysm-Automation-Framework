@@ -1400,3 +1400,26 @@
   <TD>0</TD>
  </TR>
 </TABLE><p>
+<html>
+<head>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+var data = google.visualization.arrayToDataTable(
+[['Test Status', 'Outcomes'], ['FAIL', 8], ['PASS', 186]]
+);
+var options = {
+title: 'Error Report',
+is3D: true,
+};
+var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+chart.draw(data, options);
+}
+</script>
+</head>
+<body>
+<div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
