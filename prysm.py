@@ -17,17 +17,19 @@ def readFile(fileName):
 
 def maintain_tally(header_row, table_data):
     i = 0
+    tally = {}
     for header in header_row:
         if (header == ' Test Status'):
             for row in table_data:
-                tally = {}
+                
                 if tally.has_key(row[i]):
                     tally[row[i]] += 1
                 else:
                     tally.update({row[i]: 1})
         else:
             i += 1
-    gen_html(header_row, table_data, tally)
+    #gen_html(header_row, table_data, tally)
+    print tally.items()
 
 def gen_html(head_row, table_data, tally):
     HTMLFILE = 'prysm_output.html'
@@ -38,6 +40,7 @@ def gen_html(head_row, table_data, tally):
     f.write(html_table)
     f.write('<p>')
     f.close()
+
 #     draw_pie_chart(tally, HTMLFILE)
 
 # def draw_pie_chart(tally, filename):
@@ -52,7 +55,7 @@ def gen_html(head_row, table_data, tally):
 
 
 #     f.write('var data = google.visualization.arrayToDataTable([\n')
-    
+
 #     f.write(']);\n')
 
 
