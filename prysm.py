@@ -11,14 +11,12 @@ page_template = """
 
         google.setOnLoadCallback(drawTable);
         function drawTable() {
-          
             var json_table = new google.visualization.Table(document.getElementById('table_div_json', 'arrowformat_div'));
             var json_data = new google.visualization.DataTable(%(json)s, 0.6);
             var formatter = new google.visualization.ArrowFormat();
             formatter.format(json_data, 1); // Apply formatter to second column
 
-            table.draw(data, {allowHtml: true, showRowNumber: true});
-            json_table.draw(json_data, {showRowNumber: true});
+            json_table.draw(json_data, {allowHtml: true, showRowNumber: true});
 
 
         }
@@ -29,7 +27,7 @@ page_template = """
       google.setOnLoadCallback(drawChart);
       function drawChart() {
 
-        var data = google.visualization.arrayToDataTable(%(tally)s);
+        var data = google.visualization.arrayToDataTable(%(list_tally)s);
 
         var options = {
           title: 'Tests Report'
@@ -42,7 +40,7 @@ page_template = """
     </script>
 
       <body>
-        <H1>Table created using ToJSon</H1>
+        <H1>IP2 Regression</H1>
         <div id="table_div_json"></div>
         <div id="piechart" style="width: 900px; height: 500px;"></div>
       </body>
@@ -82,17 +80,17 @@ def maintain_tally(description, table_data):
 
 def insert_in_template(description, table_data, list_tally):
     data_table = gviz_api.DataTable(description)
+    
     data_table.LoadData(table_data)
-
     # Creating a JSon string of the table
     json = data_table.ToJSon()
-    tally = list_tally
+    list_tally
     gen_html(page_template % vars())
 
 
 def gen_html(stuff):
     HTMLFILE = 'prysm_output.html'
-    f = open(HTMLFILE, 'a')
+    f = open(HTMLFILE, 'w')
     f.write(stuff)
     f.close()
 
