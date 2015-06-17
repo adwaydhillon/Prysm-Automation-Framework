@@ -1,83 +1,93 @@
 import csv
 import argparse
 import HTML
+import gviz_api
+
+page_template = """
+    <html>
+      <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+      <script>
+        google.load('visualization', '1', {packages:['table']});
+
+        google.setOnLoadCallback(drawTable);
+        function drawTable() {
+          
+          var json_table = new google.visualization.Table(document.getElementById('table_div_json'));
+          var json_data = new google.visualization.DataTable(%(json)s, 0.6);
+          json_table.draw(json_data, {showRowNumber: true});
+        }
+      </script>
+
+      <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable(%(tally)s);
+
+        var options = {
+          title: 'Tests Report'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+      <body>
+        <H1>Table created using ToJSon</H1>
+        <div id="table_div_json"></div>
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+      </body>
+    </html>
+    """
+
 
 def readFile(fileName):
     with open(fileName) as csvfile:
-        reader = csv.reader(csvfile)
-        i = 0
+        reader = csv.DictReader(csvfile)
         table_data = []
         for row in reader:
-            if (i == 0):
-                header_row = row
-            else:
-                table_data.append(row)
-            i += 1
-        maintain_tally(header_row, table_data)
+            table_data.append(row)
+        
+        description = {}
+        for header in table_data[0]:
+            description[(header.lstrip()).rstrip()] = ("string", (header.lstrip()).rstrip())
 
-def maintain_tally(header_row, table_data):
-    i = 0
+        maintain_tally(description, table_data)
+        
+def maintain_tally(description, table_data):
     tally = {}
-    for header in header_row:
-        if (header == ' Test Status'):
-            for row in table_data:
-                if row[i] != '':
-                    if tally.has_key(row[i]):
-                        tally[row[i]] += 1
-                    else:
-                        tally.update({row[i]: 1})
-        else:
-            i += 1
+    for row in table_data:
+        if row[' Test Status'] != '':
+            if tally.has_key(row[' Test Status']):
+                tally[row[' Test Status']] += 1
+            else:
+                tally[row[' Test Status']] = 1
 
-    list_tally =[]
-    list_tally.append(['Test Status', 'Outcomes'])
+    list_tally = []
+    list_tally.append(['Test Status', 'Frequency'])
     
-    for outcome in tally:
-        list_tally.append([outcome, tally[outcome]])
-    
-    gen_html(header_row, table_data, list_tally)
+    for test_status in tally:
+        list_tally.append([test_status, tally[test_status]])
 
-def gen_html(head_row, table_data, list_tally):
+    insert_in_template(description, table_data, list_tally)
+
+def insert_in_template(description, table_data, list_tally):
+    data_table = gviz_api.DataTable(description)
+    data_table.LoadData(table_data)
+
+    # Creating a JSon string of the table
+    json = data_table.ToJSon()
+    tally = list_tally
+    gen_html(page_template % vars())
+
+
+def gen_html(stuff):
     HTMLFILE = 'prysm_output.html'
-    f = open(HTMLFILE, 'w')
-    html_table = HTML.Table(table_data,
-            header_row = head_row)
-    html_table = str(html_table)
-    f.write(html_table)
-    f.write('<p>')
-    f.close()
-
-    draw_pie_chart(list_tally, HTMLFILE)
-
-def draw_pie_chart(list_tally, filename):
-    f = open(filename, 'a')
-    f.write('\n<html>\n')
-    f.write('<head>\n')
-    f.write('<script type="text/javascript" src="https://www.google.com/jsapi"></script>\n')
-    f.write('<script type="text/javascript">\n')
-    f.write('google.load("visualization", "1", {packages:["corechart"]});\n')
-    f.write('google.setOnLoadCallback(drawChart);\n')
-    f.write('function drawChart() {\n')
-
-
-    f.write('var data = google.visualization.arrayToDataTable(\n')
-    f.write(str(list_tally))
-    f.write('\n);\n')
-
-
-    f.write('var options = {\n')
-    f.write('title: \'Error Report\',\n')
-    f.write('is3D: true,\n')
-    f.write('};\n')
-    f.write('var chart = new google.visualization.PieChart(document.getElementById(\'piechart_3d\'));\n')
-    f.write('chart.draw(data, options);\n')
-    f.write('}\n')
-    f.write('</script>\n')
-    f.write('</head>\n')
-    f.write('<body>\n')
-    f.write('<div id="piechart_3d" style="width: 900px; height: 500px;"></div>\n')
-    f.write('</body>\n')
-    f.write('</html>\n')
+    f = open(HTMLFILE, 'a')
+    f.write(stuff)
     f.close()
 
 def main():
