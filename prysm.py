@@ -12,9 +12,15 @@ page_template = """
         google.setOnLoadCallback(drawTable);
         function drawTable() {
           
-          var json_table = new google.visualization.Table(document.getElementById('table_div_json'));
-          var json_data = new google.visualization.DataTable(%(json)s, 0.6);
-          json_table.draw(json_data, {showRowNumber: true});
+            var json_table = new google.visualization.Table(document.getElementById('table_div_json', 'arrowformat_div'));
+            var json_data = new google.visualization.DataTable(%(json)s, 0.6);
+            var formatter = new google.visualization.ArrowFormat();
+            formatter.format(json_data, 1); // Apply formatter to second column
+
+            table.draw(data, {allowHtml: true, showRowNumber: true});
+            json_table.draw(json_data, {showRowNumber: true});
+
+
         }
       </script>
 
