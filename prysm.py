@@ -61,14 +61,21 @@ def readFile(fileName):
                 else:
                     r[header.lstrip().rstrip()] = row[header]
             table_data.append(r)
-        
+
         description = {}
         for header in table_data[0]:
             description[(header.lstrip()).rstrip()] = ("string", (header.lstrip()).rstrip())
-
-        # maintain_tally(description, table_data)
+    
+    with open(fileName) as csvfile:
+        header_list = []
+        reader = csv.reader(csvfile)
+        for header in reader.next():
+            header_list.append(header.lstrip().rstrip())
+        header_list = str(header_list)
+        columns_order = '(' + header_list[1:len(header_list)-1] + ')'
+    maintain_tally(description, table_data, columns_order)
         
-def maintain_tally(description, table_data):
+def maintain_tally(description, table_data, columns_order):
     tally = {}
     for row in table_data:
         if row['Test Status'] != '':
@@ -83,14 +90,14 @@ def maintain_tally(description, table_data):
     for test_status in tally:
         list_tally.append([test_status, tally[test_status]])
 
-    insert_in_template(description, table_data, list_tally)
+    insert_in_template(description, table_data, list_tally, columns_order)
 
-def insert_in_template(description, table_data, list_tally):
+def insert_in_template(description, table_data, list_tally, column_order):
     data_table = gviz_api.DataTable(description)
     data_table.LoadData(table_data)
     # Creating a JSon string of the table
-    json = data_table.ToJSon(columns_order=("Test Name"))
-
+    
+    json = data_table.ToJSon(columns_order = ('Test Name', 'Test Status', 'Test Start Time', 'Test End Time', 'Test Run Time'))
     gen_html(page_template % vars())
 
 
