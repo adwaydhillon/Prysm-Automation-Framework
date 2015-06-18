@@ -96,7 +96,6 @@ def insert_in_template(description, table_data, list_tally, column_order):
     data_table = gviz_api.DataTable(description)
     data_table.LoadData(table_data)
     # Creating a JSon string of the table
-    
     json = data_table.ToJSon(columns_order = ('Test Name', 'Test Status', 'Test Start Time', 'Test End Time', 'Test Run Time'))
     gen_html(page_template % vars())
 
