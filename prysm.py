@@ -3,6 +3,7 @@ import argparse
 import HTML
 import gviz_api
 
+
 page_template = """
     <html>
       <script src="https://www.google.com/jsapi" type="text/javascript"></script>
@@ -56,7 +57,7 @@ def readFile(fileName):
             r = {}
             for header in row:
                 if (header.lstrip().rstrip() == 'Test Name'):
-                    r[header.lstrip().rstrip()] = '<a href="http://stackoverflow.com/questions/14343468/add-html-link-to-google-charts-table">' + str(header) + '</a>'
+                    r[header.lstrip().rstrip()] = '<a href="http://stackoverflow.com/questions/14343468/add-html-link-to-google-charts-table">' + str(row[header]).lstrip().rstrip() + '</a>'
                 else:
                     r[header.lstrip().rstrip()] = row[header]
             table_data.append(r)
@@ -65,7 +66,7 @@ def readFile(fileName):
         for header in table_data[0]:
             description[(header.lstrip()).rstrip()] = ("string", (header.lstrip()).rstrip())
 
-        maintain_tally(description, table_data)
+        # maintain_tally(description, table_data)
         
 def maintain_tally(description, table_data):
     tally = {}
@@ -88,7 +89,7 @@ def insert_in_template(description, table_data, list_tally):
     data_table = gviz_api.DataTable(description)
     data_table.LoadData(table_data)
     # Creating a JSon string of the table
-    json = data_table.ToJSon()
+    json = data_table.ToJSon(columns_order=("Test Name"))
 
     gen_html(page_template % vars())
 
