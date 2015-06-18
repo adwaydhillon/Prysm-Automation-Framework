@@ -11,7 +11,7 @@ page_template = """
 
         google.setOnLoadCallback(drawTable);
         function drawTable() {
-            var json_table = new google.visualization.Table(document.getElementById('table_div_json', 'arrowformat_div'));
+            var json_table = new google.visualization.Table(document.getElementById('table_div_json', 'arrowformat_div', 'colorformat_div'));
             var json_data = new google.visualization.DataTable(%(json)s, 0.6);
             var formatter = new google.visualization.ArrowFormat();
             formatter.format(json_data, 1); // Apply formatter to second column
@@ -53,7 +53,13 @@ def readFile(fileName):
         reader = csv.DictReader(csvfile)
         table_data = []
         for row in reader:
-            table_data.append(row)
+            r = {}
+            for header in row:
+                if (header.lstrip().rstrip() == 'Test Name'):
+                    r[header.lstrip().rstrip()] = '<a href="http://stackoverflow.com/questions/14343468/add-html-link-to-google-charts-table">' + str(header) + '</a>'
+                else:
+                    r[header.lstrip().rstrip()] = row[header]
+            table_data.append(r)
         
         description = {}
         for header in table_data[0]:
@@ -64,11 +70,11 @@ def readFile(fileName):
 def maintain_tally(description, table_data):
     tally = {}
     for row in table_data:
-        if row[' Test Status'] != '':
-            if tally.has_key(row[' Test Status']):
-                tally[row[' Test Status']] += 1
+        if row['Test Status'] != '':
+            if tally.has_key(row['Test Status']):
+                tally[row['Test Status']] += 1
             else:
-                tally[row[' Test Status']] = 1
+                tally[row['Test Status']] = 1
 
     list_tally = []
     list_tally.append(['Test Status', 'Frequency'])
@@ -80,11 +86,10 @@ def maintain_tally(description, table_data):
 
 def insert_in_template(description, table_data, list_tally):
     data_table = gviz_api.DataTable(description)
-    
     data_table.LoadData(table_data)
     # Creating a JSon string of the table
     json = data_table.ToJSon()
-    list_tally
+
     gen_html(page_template % vars())
 
 
