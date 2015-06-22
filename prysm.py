@@ -2,7 +2,8 @@ import csv
 import argparse
 import HTML
 import gviz_api
-
+import smtplib
+import base64
 
 page_template = """
     <html>
@@ -18,8 +19,6 @@ page_template = """
             formatter.format(json_data, 1); // Apply formatter to second column
 
             json_table.draw(json_data, {allowHtml: true, showRowNumber: true});
-
-
         }
       </script>
 
@@ -48,7 +47,6 @@ page_template = """
     </html>
     """
 
-
 def readFile(fileName):
     with open(fileName) as csvfile:
         reader = csv.DictReader(csvfile)
@@ -57,7 +55,7 @@ def readFile(fileName):
             r = {}
             for header in row:
                 if (header.lstrip().rstrip() == 'Test Name'):
-                    r[header.lstrip().rstrip()] = '<a href="http://stackoverflow.com/questions/14343468/add-html-link-to-google-charts-table">' + str(row[header]).lstrip().rstrip() + '</a>'
+                    r[header.lstrip().rstrip()] = '<a href="file:///C:\\' + str(row[header]).lstrip().rstrip() + '">' + str(row[header]).lstrip().rstrip() + '</a>'
                 else:
                     r[header.lstrip().rstrip()] = row[header]
             table_data.append(r)
@@ -99,12 +97,63 @@ def insert_in_template(description, table_data, list_tally, column_order):
     json = data_table.ToJSon(columns_order = ('Test Name', 'Test Status', 'Test Start Time', 'Test End Time', 'Test Run Time'))
     gen_html(page_template % vars())
 
-
 def gen_html(stuff):
     HTMLFILE = 'prysm_output.html'
     f = open(HTMLFILE, 'w')
     f.write(stuff)
     f.close()
+    # send_email(HTMLFILE)
+
+# def send_email(fileName):
+
+#     # Read a file and encode it into base64 format
+#     fo = open(fileName, "rb")
+#     filecontent = fo.read()
+#     encodedcontent = base64.b64encode(filecontent)  # base64
+
+#     sender = 'adway_dhillon@yahoo.com'
+#     reciever = 'adway0801@gmail.com'
+
+#     marker = "AUNIQUEMARKER"
+
+#     body ="""
+#     This is a test email to send an attachement.
+#     """
+
+#     # Define the main headers.
+#     part1 = """From: From Person <me@fromdomain.net>
+#     To: To Person <amrood.admin@gmail.com>
+#     Subject: Sending Attachement
+#     MIME-Version: 1.0
+#     Content-Type: multipart/mixed; boundary=%s
+#     --%s
+#     """ % (marker, marker)
+
+#     # Define the message action
+#     part2 = """Content-Type: text/plain
+#     Content-Transfer-Encoding:8bit
+
+#     %s
+#     --%s
+#     """ % (body,marker)
+
+#     # Define the attachment section
+#     part3 = """Content-Type: multipart/mixed; name=\"%s\"
+#     Content-Transfer-Encoding:base64
+#     Content-Disposition: attachment; filename=%s
+
+#     %s
+#     --%s--
+#     """ %(fileName, fileName, encodedcontent, marker)
+#     message = part1 + part2 + part3
+
+#     try:
+#        smtpObj = smtplib.SMTP('localhost')
+#        smtpObj.sendmail(sender, reciever, message)
+#        print "Successfully sent email"
+#     except Exception:
+#         print str(Exception)
+#         print "Error: unable to send email"
 
 def main():
     parser = argparse.ArgumentParser(description='Read the file')
