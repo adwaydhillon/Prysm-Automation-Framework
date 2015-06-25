@@ -102,7 +102,7 @@ def insert_in_template(description, table_data, list_tally, column_order):
 
 def gen_html(stuff):
     __file__ = "prysm_output.html"
-    HTMLFILE = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'Output Files'))
+    HTMLFILE = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'HTML'))
     f = open(HTMLFILE, 'w')
     f.write(stuff)
     f.close()
