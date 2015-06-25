@@ -4,7 +4,6 @@ import HTML
 import gviz_api
 import smtplib
 import base64
-import os
 from os.path import join as pjoin
 
 page_template = """
@@ -50,7 +49,7 @@ page_template = """
     """
 
 def readFile(fileName):
-    with open(pjoin('csv', fileName)) as csvfile:
+    with open(fileName) as csvfile:
         reader = csv.DictReader(csvfile)
         table_data = []
         for row in reader:
@@ -100,8 +99,9 @@ def insert_in_template(description, table_data, list_tally, column_order):
     gen_html(page_template % vars())
 
 def gen_html(stuff):
-    __file__ = "prysm_output.html"
-    HTMLFILE = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'Output Files'))
+    fileName = "prysm_output.html"
+    path_to_file = "Output Files"
+    HTMLFILE = pjoin(path_to_file, fileName)
     f = open(HTMLFILE, 'w')
     f.write(stuff)
     f.close()
@@ -109,14 +109,14 @@ def gen_html(stuff):
 
 def send_email(fileName):
 
-    fromaddr = "<INSERT SENDER'S ADDRESS>"
-    toaddrs  = "<INSERT RECEIVER'S ADDRESS>"
+    fromaddr = 'adway0801@gmail.com'
+    toaddrs  = 'adway0801@gmail.com'
+    msg = 'There was a terrible error that occured and I wanted you to know!'
 
-    msg = "<DUMMY MESSAGE GOES HERE>"
 
     # Credentials (if needed)
-    username = '<YOUR_USERNAME>'
-    password = 'YOUR_PASSWORD'
+    username = 'adway0801'
+    password = 'Macbookpro13"'
 
     # The actual mail send
     try:
