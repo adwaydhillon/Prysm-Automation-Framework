@@ -25,12 +25,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_comboBox_activated(const QString &arg1)
 {
 
 }
-
-void MainWindow::on_comboBox_activated(const QString &arg1)
+void MainWindow::on_pushButton_clicked()
 {
 
 }
