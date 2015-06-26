@@ -18,10 +18,6 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    void on_comboBox_activated(const QString &arg1);
-
-    void dragEnterEvent(QDragEnterEvent *e);
-
     void dropEvent(QDropEvent *e);
 
 private:

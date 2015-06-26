@@ -3,7 +3,8 @@
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QString>
-#include <QUrl>
+#include <QFileDialog>
+#include <QMessageBox>
 #include <QMimeData>
 #include <QDebug>
 
@@ -25,26 +26,22 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_comboBox_activated(const QString &arg1)
-{
-
-}
-void MainWindow::on_pushButton_clicked()
-{
-
-}
-
-void MainWindow::dragEnterEvent(QDragEnterEvent *e)
-{
-    if (e->mimeData()->hasUrls()) {
-        e->acceptProposedAction();
-    }
-}
-
 void MainWindow::dropEvent(QDropEvent *e)
 {
     foreach (const QUrl &url, e->mimeData()->urls()) {
         const QString &fileName = url.toLocalFile();
         qDebug() << "Dropped file:" << fileName;
     }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString file_name = QFileDialog::getOpenFileName(
+                this,
+                tr("Browse Files"),
+                QDir::homePath(),
+                "CSV Files (*.csv)"
+            );
+
+    QMessageBox::information(this, tr("File Name"), file_name);
 }

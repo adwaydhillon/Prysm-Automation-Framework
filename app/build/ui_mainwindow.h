@@ -13,10 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QComboBox>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -30,10 +27,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QWidget *horizontalLayoutWidget;
-    QHBoxLayout *horizontalLayout;
-    QLabel *label;
-    QComboBox *comboBox;
     QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -47,33 +40,16 @@ public:
         MainWindow->setMaximumSize(QSize(12727194, 16777215));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayoutWidget = new QWidget(centralWidget);
-        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(0, 150, 841, 41));
-        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(horizontalLayoutWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setEnabled(true);
-
-        horizontalLayout->addWidget(label);
-
-        comboBox = new QComboBox(horizontalLayoutWidget);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-
-        horizontalLayout->addWidget(comboBox);
-
-        pushButton = new QPushButton(horizontalLayoutWidget);
+        pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setEnabled(true);
-        pushButton->setMinimumSize(QSize(283, 32));
-        pushButton->setMaximumSize(QSize(283, 16777215));
-
-        horizontalLayout->addWidget(pushButton);
-
+        pushButton->setGeometry(QRect(340, 110, 181, 71));
+        pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
+"    font-size: 18pt;\n"
+"    font-weight: bold;\n"
+"    color: #0066FF;\n"
+"	font: \"Chalkduster\";\n"
+"}\n"
+""));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -94,8 +70,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        label->setText(QApplication::translate("MainWindow", "File name:", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Open", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Choose File", 0));
     } // retranslateUi
 
 };
