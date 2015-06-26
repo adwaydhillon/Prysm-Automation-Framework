@@ -36,12 +36,12 @@ void MainWindow::dropEvent(QDropEvent *e)
 
 void MainWindow::on_pushButton_clicked()
 {
-    QString file_name = QFileDialog::getOpenFileName(
+    QString file_path = QFileDialog::getOpenFileName(
                 this,
                 tr("Browse Files"),
                 QDir::homePath(),
                 "CSV Files (*.csv)"
             );
 
-    qDebug() << "File Path:" << file_name;
+    qDebug() << "File Path:" << file_path;
 }
