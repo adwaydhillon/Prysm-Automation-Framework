@@ -43,5 +43,5 @@ void MainWindow::on_pushButton_clicked()
                 "CSV Files (*.csv)"
             );
 
-    QMessageBox::information(this, tr("File Name"), file_name);
+    qDebug() << "File Path:" << file_name;
 }
