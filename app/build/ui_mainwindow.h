@@ -42,14 +42,21 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(340, 110, 181, 71));
+        pushButton->setGeometry(QRect(340, 110, 226, 71));
         pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "    font-size: 18pt;\n"
 "    font-weight: bold;\n"
 "    color: #0066FF;\n"
-"	font: \"Chalkduster\";\n"
+"	font: bold \"Chalkduster\";\n"
+"	border-style: outset;\n"
+"    border-width: 2px;\n"
+"    border-radius: 10px;\n"
+"	min-width: 10em;\n"
+"    padding: 6px;\n"
+"	background-color: #FAFAFA;\n"
 "}\n"
 ""));
+        pushButton->setFlat(false);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
