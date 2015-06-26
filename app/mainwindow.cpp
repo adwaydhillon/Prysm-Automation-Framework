@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "PythonQt.h"
+#include <QApplication>
 #include <QDragEnterEvent>
 #include <QDropEvent>
 #include <QString>
