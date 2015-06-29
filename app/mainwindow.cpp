@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 //#include "PythonQt.h"
+#include "stdio.h"
 #include <QApplication>
 #include <QDragEnterEvent>
 #include <QDropEvent>
@@ -9,6 +10,8 @@
 #include <QMessageBox>
 #include <QMimeData>
 #include <QDebug>
+using namespace std;;
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -44,6 +47,12 @@ void MainWindow::on_pushButton_clicked()
                 QDir::homePath(),
                 "CSV Files (*.csv)"
             );
+
+    qDebug()<< QDir::currentPath();
+
+//    std::string command = "python";
+//    system ("python hello'.py");
+
 //    // init PythonQt and Python itself
 //    PythonQt::init();
 
@@ -55,7 +64,7 @@ void MainWindow::on_pushButton_clicked()
 
 //    // run the script
 //    context.evalScript("print example");
-//    context.evalScript("def multiply(a,b):\n  return a*b;\n");
+//    context.evalScript(hello.py);
 //    QVariantList args;
 //    args << 42 << 47;
 //    QVariant result = context.call("multiply", args);
