@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "PythonQt.h"
+//#include "PythonQt.h"
 #include <QApplication>
 #include <QDragEnterEvent>
 #include <QDropEvent>
@@ -44,21 +44,21 @@ void MainWindow::on_pushButton_clicked()
                 QDir::homePath(),
                 "CSV Files (*.csv)"
             );
-    // init PythonQt and Python itself
-    PythonQt::init();
+//    // init PythonQt and Python itself
+//    PythonQt::init();
 
-    // get a smart pointer to the __main__ module of the Python interpreter
-    PythonQtObjectPtr context = PythonQt::self()->getMainModule();
+//    // get a smart pointer to the __main__ module of the Python interpreter
+//    PythonQtObjectPtr context = PythonQt::self()->getMainModule();
 
-    // add the file path as a QObject to the namespace of the __main__ module
-    context.addObject("file_path", &file_path);
+//    // add the file path as a QObject to the namespace of the __main__ module
+//    context.addObject("file_path", &file_path);
 
-    // run the script
-    context.evalScript("print example");
-    context.evalScript("def multiply(a,b):\n  return a*b;\n");
-    QVariantList args;
-    args << 42 << 47;
-    QVariant result = context.call("multiply", args);
+//    // run the script
+//    context.evalScript("print example");
+//    context.evalScript("def multiply(a,b):\n  return a*b;\n");
+//    QVariantList args;
+//    args << 42 << 47;
+//    QVariant result = context.call("multiply", args);
 
-    qDebug() << "File Path:" << file_path;
+//    qDebug() << "File Path:" << file_path;
 }
