@@ -10,7 +10,7 @@
 #include <QMessageBox>
 #include <QMimeData>
 #include <QDebug>
-using namespace std;;
+using namespace std;
 
 
 MainWindow::MainWindow(QWidget *parent) :
