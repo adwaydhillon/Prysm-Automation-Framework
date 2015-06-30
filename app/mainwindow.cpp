@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QMimeData>
 #include <QDebug>
+#include <QPixmap>
 using namespace std;
 
 
@@ -16,7 +17,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
     QPixmap bkgnd("/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/app/res/background_1.png");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;

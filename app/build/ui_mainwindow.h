@@ -17,7 +17,6 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -28,7 +27,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QPushButton *pushButton;
     QLabel *label;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -38,35 +36,18 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(846, 483);
+        MainWindow->resize(939, 483);
         MainWindow->setMaximumSize(QSize(12727194, 16777215));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(310, 170, 226, 71));
-        pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
-"    font-size: 18pt;\n"
-"    font-weight: bold;\n"
-"    color: #0066FF;\n"
-"	font: bold \"Chalkduster\";\n"
-"	border-style: outset;\n"
-"    border-width: 2px;\n"
-"    border-radius: 10px;\n"
-"	min-width: 10em;\n"
-"    padding: 6px;\n"
-"	background-color: #FAFAFA;\n"
-"}\n"
-""));
-        pushButton->setFlat(false);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(70, 30, 481, 331));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/background_1.png")));
+        label->setGeometry(QRect(10, 0, 921, 401));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/res/background_1.png")));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 846, 22));
+        menuBar->setGeometry(QRect(0, 0, 939, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -83,7 +64,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Choose File", 0));
         label->setText(QString());
     } // retranslateUi
 

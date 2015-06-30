@@ -23,17 +23,14 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>0</y>
-      <width>921</width>
-      <height>401</height>
+      <width>931</width>
+      <height>421</height>
      </rect>
     </property>
     <property name="text">
      <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="app.qrc">:/res/background_1.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -58,8 +55,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="app.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
