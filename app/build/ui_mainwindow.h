@@ -27,7 +27,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QLabel *label;
+    QLabel *background_label;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -40,11 +40,11 @@ public:
         MainWindow->setMaximumSize(QSize(12727194, 16777215));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(0, 0, 942, 421));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/beach.png")));
-        label->setScaledContents(true);
+        background_label = new QLabel(centralWidget);
+        background_label->setObjectName(QStringLiteral("background_label"));
+        background_label->setGeometry(QRect(0, 0, 942, 421));
+        background_label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/beach.png")));
+        background_label->setScaledContents(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -65,7 +65,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        label->setText(QString());
+        background_label->setText(QString());
     } // retranslateUi
 
 };

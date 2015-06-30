@@ -571,8 +571,8 @@ compiler_rcc_make_all: qrc_app.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_app.cpp
 qrc_app.cpp: ../app.qrc \
-		../res/cloud_done.png \
-		../res/beach.png
+		../cloud_done.png \
+		../beach.png
 	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/rcc -name app ../app.qrc -o qrc_app.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp

@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/res">
-        <file>res/cloud_done.png</file>
-        <file>res/beach.png</file>
+        <file>cloud_done.png</file>
+        <file>beach.png</file>
     </qresource>
 </RCC>
