@@ -56,15 +56,15 @@
      <rect>
       <x>70</x>
       <y>30</y>
-      <width>191</width>
-      <height>201</height>
+      <width>481</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>res/cloud_upload.png</pixmap>
+     <pixmap resource="app.qrc">:/res/res/background_1.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -89,6 +89,8 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="app.qrc"/>
+ </resources>
  <connections/>
 </ui>

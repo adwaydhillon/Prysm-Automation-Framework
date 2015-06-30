@@ -61,8 +61,8 @@ public:
         pushButton->setFlat(false);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(70, 30, 191, 201));
-        label->setPixmap(QPixmap(QString::fromUtf8("res/cloud_upload.png")));
+        label->setGeometry(QRect(70, 30, 481, 331));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/background_1.png")));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
