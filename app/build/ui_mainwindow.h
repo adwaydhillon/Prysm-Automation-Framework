@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -29,6 +30,8 @@ public:
     QWidget *centralWidget;
     QLabel *background_label;
     QLabel *upload_label;
+    QLabel *label;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -48,8 +51,26 @@ public:
         background_label->setScaledContents(true);
         upload_label = new QLabel(centralWidget);
         upload_label->setObjectName(QStringLiteral("upload_label"));
-        upload_label->setGeometry(QRect(240, 50, 591, 301));
+        upload_label->setGeometry(QRect(350, 10, 241, 191));
         upload_label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/cloud_upload.png")));
+        upload_label->setScaledContents(true);
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(310, 150, 321, 91));
+        label->setTextFormat(Qt::RichText);
+        label->setScaledContents(true);
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(370, 240, 201, 41));
+        pushButton->setMouseTracking(false);
+        pushButton->setAutoFillBackground(false);
+        pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
+"   	font: 75 18pt \\\"Arial\\\";\n"
+"    font-weight: normal;\n"
+"    color: \"black\";\n"
+"	background-color: #ebeef0;\n"
+"}"));
+        pushButton->setFlat(false);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -72,6 +93,8 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         background_label->setText(QString());
         upload_label->setText(QString());
+        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">Drag &amp; Drop a File</span><span style=\" font-size:14pt;\"><br/></span><span style=\" font-size:24pt; vertical-align:sub;\">or</span></p></body></html>", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Select a file", 0));
     } // retranslateUi
 
 };
