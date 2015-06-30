@@ -20,6 +20,8 @@ private slots:
     void dropEvent(QDropEvent *e);
     void dragEnterEvent(QDragEnterEvent *e);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

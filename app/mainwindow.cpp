@@ -42,35 +42,15 @@ void MainWindow::dropEvent(QDropEvent *e)
         qDebug() << "Dropped file:" << fileName;
     }
 }
-//void MainWindow::on_pushButton_clicked()
-//{
-//    QString file_path = QFileDialog::getOpenFileName(
-//                this,
-//                tr("Browse Files"),
-//                QDir::homePath(),
-//                "CSV Files (*.csv)"
-//            );
 
-//    qDebug()<< QDir::currentPath();
+void MainWindow::on_pushButton_clicked()
+{
+        QString file_path = QFileDialog::getOpenFileName(
+                    this,
+                    tr("Browse Files"),
+                    QDir::homePath(),
+                    "CSV Files (*.csv)"
+                );
 
-//    std::string command = "python";
-//    system ("python hello'.py");
-
-//    // init PythonQt and Python itself
-//    PythonQt::init();
-
-//    // get a smart pointer to the __main__ module of the Python interpreter
-//    PythonQtObjectPtr context = PythonQt::self()->getMainModule();
-
-//    // add the file path as a QObject to the namespace of the __main__ module
-//    context.addObject("file_path", &file_path);
-
-//    // run the script
-//    context.evalScript("print example");
-//    context.evalScript(hello.py);
-//    QVariantList args;
-//    args << 42 << 47;
-//    QVariant result = context.call("multiply", args);
-
-//    qDebug() << "File Path:" << file_path;
-//}
+        qDebug() << "File Path:" << file_path;
+}
