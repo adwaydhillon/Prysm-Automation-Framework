@@ -3,5 +3,6 @@
         <file>res/beach.png</file>
         <file>res/cloud_done.png</file>
         <file>res/cloud_upload.png</file>
+        <file>res/prysm_logo.png</file>
     </qresource>
 </RCC>
