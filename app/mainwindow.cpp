@@ -43,6 +43,10 @@ void MainWindow::dropEvent(QDropEvent *e)
     }
 }
 
+bool MainWindow::validate_file(QString file_path) {
+    return true;
+}
+
 void MainWindow::on_pushButton_clicked()
 {
         QString file_path = QFileDialog::getOpenFileName(
@@ -52,5 +56,7 @@ void MainWindow::on_pushButton_clicked()
                     "CSV Files (*.csv)"
                 );
 
-        qDebug() << "File Path:" << file_path;
+        if (validate_file(file_path)) {
+            qDebug() << "File Path:" << file_path;
+        }
 }

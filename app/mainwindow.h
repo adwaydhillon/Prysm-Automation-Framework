@@ -16,11 +16,10 @@ public:
     ~MainWindow();
 
 private slots:
-//    void on_pushButton_clicked();
     void dropEvent(QDropEvent *e);
     void dragEnterEvent(QDragEnterEvent *e);
-
     void on_pushButton_clicked();
+    bool validate_file(QString file_path);
 
 private:
     Ui::MainWindow *ui;
