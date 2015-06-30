@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-//#include "PythonQt.h"
 #include "stdio.h"
 #include <QApplication>
 #include <QDragEnterEvent>
@@ -18,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap bkgnd("/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/app");
+    QPixmap bkgnd("/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/app/res/background_1.png");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette palette;
     palette.setBrush(QPalette::Background, bkgnd);
