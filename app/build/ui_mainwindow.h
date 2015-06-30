@@ -106,8 +106,8 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         background_label->setText(QString());
         upload_label->setText(QString());
-        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">Drag &amp; Drop a File</span><span style=\" font-size:14pt;\"><br/></span><span style=\" font-size:24pt; vertical-align:sub;\">or</span></p></body></html>", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Select a file", 0));
+        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">Drag &amp; Drop a Folder</span><span style=\" font-size:14pt;\"><br/></span><span style=\" font-size:24pt; vertical-align:sub;\">or</span></p></body></html>", 0));
+        pushButton->setText(QApplication::translate("MainWindow", "Select a project", 0));
         prysm_label->setText(QString());
     } // retranslateUi
 
