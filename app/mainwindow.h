@@ -16,9 +16,9 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
-
+//    void on_pushButton_clicked();
     void dropEvent(QDropEvent *e);
+    void dragEnterEvent(QDragEnterEvent *e);
 
 private:
     Ui::MainWindow *ui;

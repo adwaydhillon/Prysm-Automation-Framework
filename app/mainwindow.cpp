@@ -20,12 +20,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     QPixmap pix(":/app/res/beach.png");
     ui->background_label->setPixmap(pix);
-//    setAcceptDrops(true);
+    setAcceptDrops(true);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::dragEnterEvent(QDragEnterEvent *e)
+{
+    if (e->mimeData()->hasUrls()) {
+        e->acceptProposedAction();
+    }
 }
 
 void MainWindow::dropEvent(QDropEvent *e)
@@ -35,17 +42,16 @@ void MainWindow::dropEvent(QDropEvent *e)
         qDebug() << "Dropped file:" << fileName;
     }
 }
+//void MainWindow::on_pushButton_clicked()
+//{
+//    QString file_path = QFileDialog::getOpenFileName(
+//                this,
+//                tr("Browse Files"),
+//                QDir::homePath(),
+//                "CSV Files (*.csv)"
+//            );
 
-void MainWindow::on_pushButton_clicked()
-{
-    QString file_path = QFileDialog::getOpenFileName(
-                this,
-                tr("Browse Files"),
-                QDir::homePath(),
-                "CSV Files (*.csv)"
-            );
-
-    qDebug()<< QDir::currentPath();
+//    qDebug()<< QDir::currentPath();
 
 //    std::string command = "python";
 //    system ("python hello'.py");
@@ -67,4 +73,4 @@ void MainWindow::on_pushButton_clicked()
 //    QVariant result = context.call("multiply", args);
 
 //    qDebug() << "File Path:" << file_path;
-}
+//}

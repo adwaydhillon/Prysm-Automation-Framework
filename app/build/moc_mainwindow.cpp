@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[6];
-    char stringdata[58];
+    QByteArrayData data[7];
+    char stringdata[68];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,15 +30,16 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(2, 33, 0), // ""
-QT_MOC_LITERAL(3, 34, 9), // "dropEvent"
-QT_MOC_LITERAL(4, 44, 11), // "QDropEvent*"
-QT_MOC_LITERAL(5, 56, 1) // "e"
+QT_MOC_LITERAL(1, 11, 9), // "dropEvent"
+QT_MOC_LITERAL(2, 21, 0), // ""
+QT_MOC_LITERAL(3, 22, 11), // "QDropEvent*"
+QT_MOC_LITERAL(4, 34, 1), // "e"
+QT_MOC_LITERAL(5, 36, 14), // "dragEnterEvent"
+QT_MOC_LITERAL(6, 51, 16) // "QDragEnterEvent*"
 
     },
-    "MainWindow\0on_pushButton_clicked\0\0"
-    "dropEvent\0QDropEvent*\0e"
+    "MainWindow\0dropEvent\0\0QDropEvent*\0e\0"
+    "dragEnterEvent\0QDragEnterEvent*"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,12 +57,12 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
-       3,    1,   25,    2, 0x08 /* Private */,
+       1,    1,   24,    2, 0x08 /* Private */,
+       5,    1,   27,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 4,    5,
+    QMetaType::Void, 0x80000000 | 3,    4,
+    QMetaType::Void, 0x80000000 | 6,    4,
 
        0        // eod
 };
@@ -71,8 +72,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     if (_c == QMetaObject::InvokeMetaMethod) {
         MainWindow *_t = static_cast<MainWindow *>(_o);
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
-        case 1: _t->dropEvent((*reinterpret_cast< QDropEvent*(*)>(_a[1]))); break;
+        case 0: _t->dropEvent((*reinterpret_cast< QDropEvent*(*)>(_a[1]))); break;
+        case 1: _t->dragEnterEvent((*reinterpret_cast< QDragEnterEvent*(*)>(_a[1]))); break;
         default: ;
         }
     }
