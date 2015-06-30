@@ -33,10 +33,26 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>:/res/res/beach.png</pixmap>
+     <pixmap resource="app.qrc">:/res/res/beach.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="upload_label">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>50</y>
+      <width>591</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="app.qrc">:/res/res/cloud_upload.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -61,6 +77,8 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="app.qrc"/>
+ </resources>
  <connections/>
 </ui>

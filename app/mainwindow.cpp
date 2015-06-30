@@ -18,8 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix(":/app/res/beach.png");
-    ui->background_label->setPixmap(pix);
+//    QPixmap pix(":/app/res/beach.png");
+//    ui->background_label->setPixmap(pix);
     setAcceptDrops(true);
 }
 

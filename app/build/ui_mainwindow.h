@@ -28,6 +28,7 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QLabel *background_label;
+    QLabel *upload_label;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -45,6 +46,10 @@ public:
         background_label->setGeometry(QRect(0, 0, 942, 421));
         background_label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/beach.png")));
         background_label->setScaledContents(true);
+        upload_label = new QLabel(centralWidget);
+        upload_label->setObjectName(QStringLiteral("upload_label"));
+        upload_label->setGeometry(QRect(240, 50, 591, 301));
+        upload_label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/cloud_upload.png")));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -66,6 +71,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         background_label->setText(QString());
+        upload_label->setText(QString());
     } // retranslateUi
 
 };
