@@ -571,6 +571,7 @@ compiler_rcc_make_all: qrc_app.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_app.cpp
 qrc_app.cpp: ../app.qrc \
+		../res/prysm_logo.png \
 		../res/cloud_upload.png \
 		../res/cloud_done.png \
 		../res/beach.png

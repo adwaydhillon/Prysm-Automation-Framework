@@ -32,6 +32,7 @@ public:
     QLabel *upload_label;
     QLabel *label;
     QPushButton *pushButton;
+    QLabel *prysm_label;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -47,11 +48,13 @@ public:
         background_label = new QLabel(centralWidget);
         background_label->setObjectName(QStringLiteral("background_label"));
         background_label->setGeometry(QRect(0, 0, 942, 421));
+        background_label->setAcceptDrops(false);
         background_label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/beach.png")));
         background_label->setScaledContents(true);
         upload_label = new QLabel(centralWidget);
         upload_label->setObjectName(QStringLiteral("upload_label"));
         upload_label->setGeometry(QRect(350, 10, 241, 191));
+        upload_label->setAcceptDrops(true);
         upload_label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/cloud_upload.png")));
         upload_label->setScaledContents(true);
         label = new QLabel(centralWidget);
@@ -76,6 +79,11 @@ public:
 "	padding: 6px;\n"
 "}"));
         pushButton->setFlat(false);
+        prysm_label = new QLabel(centralWidget);
+        prysm_label->setObjectName(QStringLiteral("prysm_label"));
+        prysm_label->setGeometry(QRect(10, 0, 91, 51));
+        prysm_label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/prysm_logo.png")));
+        prysm_label->setScaledContents(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -100,6 +108,7 @@ public:
         upload_label->setText(QString());
         label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">Drag &amp; Drop a File</span><span style=\" font-size:14pt;\"><br/></span><span style=\" font-size:24pt; vertical-align:sub;\">or</span></p></body></html>", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Select a file", 0));
+        prysm_label->setText(QString());
     } // retranslateUi
 
 };
