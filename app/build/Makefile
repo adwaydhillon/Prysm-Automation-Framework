@@ -572,7 +572,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_app.cpp
 qrc_app.cpp: ../app.qrc \
 		../res/cloud_done.png \
-		../res/background_1.png
+		../res/beach.png
 	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/rcc -name app ../app.qrc -o qrc_app.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp
@@ -628,7 +628,9 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QMimeData \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qmimedata.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
 
 qrc_app.o: qrc_app.cpp 

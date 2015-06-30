@@ -42,8 +42,9 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 0, 921, 401));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/res/background_1.png")));
+        label->setGeometry(QRect(0, 0, 942, 421));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/beach.png")));
+        label->setScaledContents(true);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));

@@ -17,11 +17,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    QPixmap bkgnd("/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/app/res/background_1.png");
-    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-    QPalette palette;
-    palette.setBrush(QPalette::Background, bkgnd);
-    this->setPalette(palette);
     setAcceptDrops(true);
 }
 
