@@ -62,13 +62,13 @@
     <property name="geometry">
      <rect>
       <x>310</x>
-      <y>150</y>
+      <y>160</y>
       <width>321</width>
       <height>91</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Drag &amp;amp; Drop a File&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24pt; vertical-align:sub;&quot;&gt;or&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:600;&quot;&gt;Drag &amp;amp; Drop a File&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:24pt; vertical-align:sub;&quot;&gt;or&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="textFormat">
      <enum>Qt::RichText</enum>
@@ -81,7 +81,7 @@
     <property name="geometry">
      <rect>
       <x>370</x>
-      <y>240</y>
+      <y>250</y>
       <width>201</width>
       <height>41</height>
      </rect>
@@ -98,6 +98,11 @@
     font-weight: normal;
     color: &quot;black&quot;;
 	background-color: #ebeef0;
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: beige;
+	padding: 6px;
 }</string>
     </property>
     <property name="text">

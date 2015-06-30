@@ -56,12 +56,12 @@ public:
         upload_label->setScaledContents(true);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(310, 150, 321, 91));
+        label->setGeometry(QRect(310, 160, 321, 91));
         label->setTextFormat(Qt::RichText);
         label->setScaledContents(true);
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(370, 240, 201, 41));
+        pushButton->setGeometry(QRect(370, 250, 201, 41));
         pushButton->setMouseTracking(false);
         pushButton->setAutoFillBackground(false);
         pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
@@ -69,6 +69,11 @@ public:
 "    font-weight: normal;\n"
 "    color: \"black\";\n"
 "	background-color: #ebeef0;\n"
+"	border-style: outset;\n"
+"    border-width: 2px;\n"
+"    border-radius: 10px;\n"
+"    border-color: beige;\n"
+"	padding: 6px;\n"
 "}"));
         pushButton->setFlat(false);
         MainWindow->setCentralWidget(centralWidget);
@@ -93,7 +98,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
         background_label->setText(QString());
         upload_label->setText(QString());
-        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:600;\">Drag &amp; Drop a File</span><span style=\" font-size:14pt;\"><br/></span><span style=\" font-size:24pt; vertical-align:sub;\">or</span></p></body></html>", 0));
+        label->setText(QApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600;\">Drag &amp; Drop a File</span><span style=\" font-size:14pt;\"><br/></span><span style=\" font-size:24pt; vertical-align:sub;\">or</span></p></body></html>", 0));
         pushButton->setText(QApplication::translate("MainWindow", "Select a file", 0));
     } // retranslateUi
 
