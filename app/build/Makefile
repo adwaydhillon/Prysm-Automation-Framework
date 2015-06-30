@@ -49,9 +49,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../main.cpp \
-		../mainwindow.cpp moc_mainwindow.cpp
+		../mainwindow.cpp qrc_app.cpp \
+		moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		qrc_app.o \
 		moc_mainwindow.o
 DIST          = /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/qdevice.pri \
@@ -166,6 +168,7 @@ DIST          = /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/feature
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/qt_config.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/spec_post.prf \
+		../.qmake.stash \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/default_pre.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -342,6 +345,7 @@ Makefile: ../app.pro /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/ma
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/qt_config.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/default_pre.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -363,6 +367,7 @@ Makefile: ../app.pro /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/ma
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/yacc.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/lex.prf \
 		../app.pro \
+		../app.qrc \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/QtGui.prl \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/QtCore.prl
@@ -480,6 +485,7 @@ Makefile: ../app.pro /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/ma
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/qt_config.prf:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/macx-clang/qmake.conf:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/exclusive_builds.prf:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/default_pre.prf:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -501,6 +507,7 @@ Makefile: ../app.pro /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/ma
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/yacc.prf:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/lex.prf:
 ../app.pro:
+../app.qrc:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/QtGui.prl:
 /Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/QtCore.prl:
@@ -533,6 +540,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../app.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../mainwindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../main.cpp ../mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../mainwindow.ui $(DISTDIR)/
@@ -559,8 +567,14 @@ check: first
 
 compiler_objective_c_make_all:
 compiler_objective_c_clean:
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_app.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_app.cpp
+qrc_app.cpp: ../app.qrc \
+		../res/cloud_done.png \
+		../res/background_1.png
+	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/rcc -name app ../app.qrc -o qrc_app.cpp
+
 compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
@@ -585,7 +599,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -600,18 +614,25 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		ui_mainwindow.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QDragEnterEvent \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QDropEvent \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrl \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMessageBox \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmessagebox.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QMimeData \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qmimedata.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
+
+qrc_app.o: qrc_app.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_app.o qrc_app.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
