@@ -42,6 +42,17 @@ void MainWindow::dropEvent(QDropEvent *e)
     }
 }
 
+bool MainWindow::eventFilter(QObject* o, QEvent* e) {
+    if (e->type()==QEvent::DragEnter) {
+        qDebug() << "QEvent::DragEnter";
+    }
+
+    if (e->type()==QEvent::Drop) {
+        qDebug() << "QEvent::Drop";
+    }
+    return false;
+}
+
 bool MainWindow::validate_proj(QString proj_path) {
     return true;
 }

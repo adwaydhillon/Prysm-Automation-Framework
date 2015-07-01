@@ -20,6 +20,7 @@ private slots:
     void dragEnterEvent(QDragEnterEvent *e);
     void on_pushButton_clicked();
     bool validate_proj(QString file_path);
+    bool MainWindow::eventFilter(QObject* o, QEvent* e);
 
 private:
     Ui::MainWindow *ui;
