@@ -37,13 +37,13 @@ QT_MOC_LITERAL(4, 34, 1), // "e"
 QT_MOC_LITERAL(5, 36, 14), // "dragEnterEvent"
 QT_MOC_LITERAL(6, 51, 16), // "QDragEnterEvent*"
 QT_MOC_LITERAL(7, 68, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(8, 90, 13), // "validate_file"
+QT_MOC_LITERAL(8, 90, 13), // "validate_proj"
 QT_MOC_LITERAL(9, 104, 9) // "file_path"
 
     },
     "MainWindow\0dropEvent\0\0QDropEvent*\0e\0"
     "dragEnterEvent\0QDragEnterEvent*\0"
-    "on_pushButton_clicked\0validate_file\0"
+    "on_pushButton_clicked\0validate_proj\0"
     "file_path"
 };
 #undef QT_MOC_LITERAL
@@ -84,7 +84,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->dropEvent((*reinterpret_cast< QDropEvent*(*)>(_a[1]))); break;
         case 1: _t->dragEnterEvent((*reinterpret_cast< QDragEnterEvent*(*)>(_a[1]))); break;
         case 2: _t->on_pushButton_clicked(); break;
-        case 3: { bool _r = _t->validate_file((*reinterpret_cast< QString(*)>(_a[1])));
+        case 3: { bool _r = _t->validate_proj((*reinterpret_cast< QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
         default: ;
         }

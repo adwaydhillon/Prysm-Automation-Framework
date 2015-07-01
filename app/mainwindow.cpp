@@ -38,25 +38,26 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *e)
 void MainWindow::dropEvent(QDropEvent *e)
 {
     foreach (const QUrl &url, e->mimeData()->urls()) {
-        const QString &fileName = url.toLocalFile();
-        qDebug() << "Dropped file:" << fileName;
+        const QString &proj_path = url.toLocalFile();
+        validate_proj(proj_path);
+        qDebug() << "Dropped file:" << proj_path;
     }
 }
 
-bool MainWindow::validate_file(QString file_path) {
+bool MainWindow::validate_proj(QString proj_path) {
     return true;
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-        QString file_path = QFileDialog::getOpenFileName(
+        QString proj_path = QFileDialog::getOpenFileName(
                     this,
                     tr("Browse Files"),
                     QDir::homePath(),
                     "CSV Files (*.csv)"
                 );
 
-        if (validate_file(file_path)) {
-            qDebug() << "File Path:" << file_path;
+        if (validate_proj(proj_path)) {
+            qDebug() << "File Path:" << proj_path;
         }
 }
