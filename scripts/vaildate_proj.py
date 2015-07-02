@@ -2,7 +2,7 @@ import argparse
 import os
 
 def validate(proj_path):
-	for i in os.listdir(os.getcwd()):
+	for i in os.listdir(proj_path):
 		print i
 
 def main():
