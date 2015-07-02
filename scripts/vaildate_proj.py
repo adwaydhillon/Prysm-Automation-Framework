@@ -2,8 +2,10 @@ import argparse
 import os
 
 def validate(proj_path):
-	for i in os.listdir(proj_path):
-		print i
+	dir = set()
+	for folder in os.listdir(proj_path):
+		dir.add(folder)
+	print dir
 
 def main():
 	parser = argparse.ArgumentParser(description='Validate the project')
