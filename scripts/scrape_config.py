@@ -9,5 +9,7 @@ def main():
 	args = parser.parse_args()
 	testConfig_path = args.testConfig_path
 
+def scrape
+
 if __name__ == "__main__":
 	main()
