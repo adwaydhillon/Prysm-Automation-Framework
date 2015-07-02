@@ -1,10 +1,13 @@
-import ar
+import argparse
 
 def main():
-	parser = argparse.ArgumentParser(description='Validate the project')
-	parser.add_argument('proj_path', help='Input the path of the project to be validated')
+	parser = argparse.ArgumentParser(description='Scrape the YAML config files')
+	parser.add_argument('simConfig_path', help='Input the path of the Simulation Environment Configuration')
+	parser.add_argument('testConfig_path', help='Input the path of the Test Run Configuration')
 	args = parser.parse_args()
-	proj_path = args.proj_path
+	simConfig_path = args.simConfig_path
+	args = parser.parse_args()
+	testConfig_path = args.testConfig_path
 
 if __name__ == "__main__":
 	main()
