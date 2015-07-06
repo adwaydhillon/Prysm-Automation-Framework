@@ -10,6 +10,7 @@
 #include <QMimeData>
 #include <QDebug>
 #include <QPixmap>
+#include <QProcess>
 using namespace std;
 
 
@@ -54,6 +55,7 @@ bool MainWindow::eventFilter(QObject* o, QEvent* e) {
 }
 
 bool MainWindow::validate_proj(QString proj_path) {
+
     return true;
 }
 
@@ -67,6 +69,8 @@ void MainWindow::on_pushButton_clicked()
                 );
 
         if (validate_proj(proj_path)) {
+            QProcess process;
+            process.startDetached("open .");
             qDebug() << "File Path:" << proj_path;
         }
 }
