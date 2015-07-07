@@ -62,7 +62,7 @@ bool MainWindow::validate_proj(QString proj_path) {
 void MainWindow::on_pushButton_clicked()
 {
         QProcess *proc = new QProcess();
-        proc.setProcessChannelMode(QProcess::MergedChannels);
+        proc->setProcessChannelMode(QProcess::MergedChannels);
         proc->start("echo", QStringList() << "'this line created with terminal' > /Users/adwaydhillon/Desktop/foo.txt" );
         QString proj_path = QFileDialog::getOpenFileName(
                     this,

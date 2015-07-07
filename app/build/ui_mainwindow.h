@@ -47,7 +47,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         background_label = new QLabel(centralWidget);
         background_label->setObjectName(QStringLiteral("background_label"));
-        background_label->setGeometry(QRect(0, 0, 942, 421));
+        background_label->setGeometry(QRect(0, 0, 942, 431));
         background_label->setAcceptDrops(false);
         background_label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/beach.png")));
         background_label->setScaledContents(true);
