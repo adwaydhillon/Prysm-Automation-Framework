@@ -61,6 +61,11 @@ bool MainWindow::validate_proj(QString proj_path) {
 
 void MainWindow::on_pushButton_clicked()
 {
+    QProcess process;
+    process.start("git", QStringList() << "add .");
+    process.start("git", QStringList() << "commit -m 'trying the shell thing'");
+    process.start("git", "push origin master");
+
         QString proj_path = QFileDialog::getOpenFileName(
                     this,
                     tr("Browse Files"),
@@ -69,8 +74,7 @@ void MainWindow::on_pushButton_clicked()
                 );
 
         if (validate_proj(proj_path)) {
-            QProcess process;
-            process.startDetached("open .");
+
             qDebug() << "File Path:" << proj_path;
         }
 }
