@@ -55,15 +55,14 @@ bool MainWindow::eventFilter(QObject* o, QEvent* e) {
 }
 
 bool MainWindow::validate_proj(QString proj_path) {
-
     return true;
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-        QProcess *proc = new QProcess();
+        QProcess *proc = new QProcess(this);
         proc->setProcessChannelMode(QProcess::ForwardedChannels );
-        proc->start("echo", QStringList() << "'this line created with terminal' > /Users/adwaydhillon/Desktop/foo.txt" );
+        proc->start("mkdir", QStringList() << "/Users/adwaydhillon/Desktop/adway" );
         QString proj_path = QFileDialog::getOpenFileName(
                     this,
                     tr("Browse Files"),
