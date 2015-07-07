@@ -63,12 +63,12 @@ bool MainWindow::validate_proj(QString proj_path) {
 
 void MainWindow::on_pushButton_clicked()
 {
-        QString proj_path = QFileDialog::getOpenFileName(
-                    this,
-                    tr("Browse Files"),
-                    QDir::homePath(),
-                    "CSV Files (*.csv)"
-                );
+        QString proj_path = QFileDialog::getExistingDirectory(
+                                                        this,
+                                                        tr("Open Directory"),
+                                                        QDir::homePath(),
+                                                        QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+                                                        );
 
         if (validate_proj(proj_path)) {
             qDebug() << "File Path:" << proj_path;
