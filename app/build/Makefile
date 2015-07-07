@@ -632,7 +632,9 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QProcess \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qprocess.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
 
 qrc_app.o: qrc_app.cpp 
