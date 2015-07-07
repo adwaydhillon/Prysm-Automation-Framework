@@ -55,14 +55,14 @@ bool MainWindow::eventFilter(QObject* o, QEvent* e) {
 }
 
 bool MainWindow::validate_proj(QString proj_path) {
-    return true;
+    QProcess *is_valid = new QProcess(this);
+    is_valid->setProcessChannelMode(QProcess::ForwardedChannels );
+    is_valid->start("python", QStringList() << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/validate_proj.py"
+                    << proj_path);
 }
 
 void MainWindow::on_pushButton_clicked()
 {
-        QProcess *proc = new QProcess(this);
-        proc->setProcessChannelMode(QProcess::ForwardedChannels );
-        proc->start("mkdir", QStringList() << "/Users/adwaydhillon/Desktop/adway" );
         QString proj_path = QFileDialog::getOpenFileName(
                     this,
                     tr("Browse Files"),

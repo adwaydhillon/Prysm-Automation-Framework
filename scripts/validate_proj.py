@@ -1,71 +1,86 @@
-import argparse
-import os
+import argparse, os, logging
 
 def is_valid(proj_path):
-	dir = set()
-	for folder in os.listdir(proj_path):
-		dir.add(folder)
-	if ("DV" in dir):
-		DV_dir = set()
-		for folder in os.listdir(proj_path + "/DV"):
-			DV_dir.add(folder)
-		if ("TB" not in DV_dir):
+	dirs = set()
+	try:
+		for folder in os.listdir(proj_path):
+			dirs.add(folder)
+	except Exception, e:
+		logging.error(str(e))
+		return False
+
+	if ("DV" in dirs):
+		DV_dirs = set()
+		try:
+			for folder in os.listdir(proj_path + "/DV"):
+				DV_dirs.add(folder)
+		except Exception, e:
+			logging.error(str(e))
+			return False
+
+		if ("TB" not in DV_dirs):
 			print "'TB' not found in 'DV' folder"
 			return False
-		if ("tests" not in DV_dir):
+		if ("tests" not in DV_dirs):
 			print "'tests' not found in 'DV' folder"
 			return False
+
 	else:
 		print "'DV' folder not found"
 		return False
 
-	if ("sim_env_scripts" in dir):
-		scripts_dir = set()
-		for folder in os.listdir(proj_path + "/sim_env_scripts"):
-			scripts_dir.add(folder)
-		if ("errorHandling.py" not in scripts_dir):
+	if ("sim_env_scripts" in dirs):
+		scripts_dirs = set()
+		try:
+			for folder in os.listdir(proj_path + "/sim_env_scripts"):
+				scripts_dirs.add(folder)
+		except Exception, e:
+			logging.error(str(e))
+			return False
+
+		if ("errorHandling.py" not in scripts_dirs):
 			print "'errorHandling.py' not found in 'sim_env_scripts' folder"
 			return False
-		if ("fileIO.py" not in scripts_dir):
+		if ("fileIO.py" not in scripts_dirs):
 			print "'fileIO.py' not found in 'sim_env_scripts' folder"
 			return False
-		if ("global_init.py" not in scripts_dir):
+		if ("global_init.py" not in scripts_dirs):
 			print "'global_init.py' not found in 'sim_env_scripts' folder"
 			return False
-		if ("prepare.py" not in scripts_dir):
+		if ("prepare.py" not in scripts_dirs):
 			print "'prepare.py' not found in 'sim_env_scripts' folder"
 			return False
-		if ("reportGen.py" not in scripts_dir):
+		if ("reportGen.py" not in scripts_dirs):
 			print "'reportGen.py' not found in 'sim_env_scripts' folder"
 			return False
-		if ("run.py" not in scripts_dir):
+		if ("run.py" not in scripts_dirs):
 			print "'run.py' not found in 'sim_env_scripts' folder"
 			return False
-		if ("simulator.py" not in scripts_dir):
+		if ("simulator.py" not in scripts_dirs):
 			print "'simulator.py' not found in 'sim_env_scripts' folder"
 			return False
+
 	else:
 		print "'sim_env_scripts' folder not found"
 		return False
 
-
-	if ("simEnvConfig.yaml" not in dir):
+	if ("simEnvConfig.yaml" not in dirs):
 		print "'simEnvConfig.yaml' not found"
 		return False
 
-	if ("suites" not in dir):
+	if ("suites" not in dirs):
 		print "'suites' folder not found"
 		return False
 
-	if ("TB_scripts" not in dir):
+	if ("TB_scripts" not in dirs):
 		print "'TB_scripts' folder not found"
 		return False
 
-	if ("testRunConfig.yaml" not in dir):
+	if ("testRunConfig.yaml" not in dirs):
 		print "'testRunConfig.yaml' not found"
 		return False
 
-	if ("Tool_scripts" not in dir):
+	if ("Tool_scripts" not in dirs):
 		print "'Tool_scripts' folder not found"
 		return False
 
