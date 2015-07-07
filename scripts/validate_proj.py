@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+#title           :validate_proj.py
+#description     :This will perform a validation check on a local project folder according to some given requirements.
+#author          :Adway Dhillon
+#date            :20150707
+#version         :1.0.1
+#usage           :python validate_proj.py.py [folder_path]
+#notes           :
+#python_version  :Python 2.7.6
+#==============================================================================
+
 import argparse, os, logging
 
 def is_valid(proj_path):
