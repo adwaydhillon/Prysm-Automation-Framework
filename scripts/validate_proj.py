@@ -95,6 +95,7 @@ def is_valid(proj_path):
 		print "'Tool_scripts' folder not found"
 		return False
 
+    print yep
 	return True
 
 def main():
