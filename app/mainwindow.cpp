@@ -57,9 +57,11 @@ bool MainWindow::eventFilter(QObject* o, QEvent* e) {
 
 bool MainWindow::validate_proj(QString proj_path) {
     QProcess *is_valid = new QProcess(this);
-    is_valid->setProcessChannelMode(QProcess::ForwardedChannels );
+    //is_valid->setProcessChannelMode(QProcess::ForwardedChannels );
     is_valid->start("python", QStringList() << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/validate_proj.py"
                     << proj_path);
+    QByteArray output = is_valid->readAllStandardOutput();
+    qDebug() << "hehr" << output;
 }
 
 void MainWindow::on_pushButton_clicked()
