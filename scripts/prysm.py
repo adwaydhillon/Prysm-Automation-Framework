@@ -4,7 +4,7 @@
 #author          :Adway Dhillon
 #date            :20150708
 #version         :1.0.1
-#usage           :python reportGen.py [folder_path]
+#usage           :python reportGen.py [csv file_name]
 #notes           :
 #python_version  :Python 2.7.6
 #==============================================================================
