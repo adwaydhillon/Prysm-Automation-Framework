@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+#title           :reportGen.py
+#description     :This will scrape a csv formatted file and generate HTML reports for the same.
+#author          :Adway Dhillon
+#date            :20150708
+#version         :1.0.1
+#usage           :python reportGen.py [folder_path]
+#notes           :
+#python_version  :Python 2.7.6
+#==============================================================================
+
 import csv
 import argparse
 import HTML

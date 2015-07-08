@@ -4,7 +4,7 @@
 #author          :Adway Dhillon
 #date            :20150707
 #version         :1.0.1
-#usage           :python validate_proj.py.py [folder_path]
+#usage           :python validate_proj.py [folder_path]
 #notes           :
 #python_version  :Python 2.7.6
 #==============================================================================
