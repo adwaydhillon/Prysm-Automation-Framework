@@ -38,8 +38,9 @@ void MainWindow::dropEvent(QDropEvent *e)
 {
     foreach (const QUrl &url, e->mimeData()->urls()) {
         const QString &proj_path = url.toLocalFile();
-        validate_proj(proj_path);
-        qDebug() << "Dropped file:" << proj_path;
+        if (validate_proj(proj_path)) {
+            qDebug() << "Dropped file:" << proj_path;
+        }
     }
 }
 
