@@ -27,8 +27,12 @@ def scrape_file(file_path):
 
 	for line in content:
 		if line[0] != '#':
-			print line
-	
+			if len(line.split(':', 1)) > 1:
+				details[line.split(':', 1)[0]] = line.split(':', 1)[1]
+
+	for each in details:
+		print each + ": " + details[each] + "\n"
+
 
 if __name__ == "__main__":
 	main()
