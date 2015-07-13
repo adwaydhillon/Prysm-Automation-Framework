@@ -1,3 +1,14 @@
+#!/usr/bin/env python
+#title           :scrape_config.py
+#description     :This will scrape a local YAML file for config details
+#author          :Adway Dhillon
+#date            :20150713
+#version         :1.0.1
+#usage           :python scrape_config.py [folder_path]
+#notes           :
+#python_version  :Python 2.7.6
+#==============================================================================
+
 import argparse
 
 def main():
