@@ -28,8 +28,9 @@ def scrape_file(file_path):
 	for line in content:
 		if line[0] != '#':
 			if len(line.split(':', 1)) > 1:
-				details[line.split(':', 1)[0]] = line.split(':', 1)[1]
+				details[line.split(':', 1)[0].lstrip().rstrip()] = line.split(':', 1)[1].lstrip().rstrip()
 
+	# This is for temporary debugging
 	for each in details:
 		print each + ": " + details[each] + "\n"
 
