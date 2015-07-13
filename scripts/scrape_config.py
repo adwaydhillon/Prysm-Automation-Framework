@@ -13,7 +13,7 @@ import argparse
 
 def main():
 	parser = argparse.ArgumentParser(description='Scrape the YAML config files')
-	parser.add_argument('file_path', help='Input the path of the Simulation Environment Configuration')
+	parser.add_argument('file_path', help='Input the path of the YAML Configuration file')
 	args = parser.parse_args()
 	file_path = args.file_path
 	scrape_file(file_path)
