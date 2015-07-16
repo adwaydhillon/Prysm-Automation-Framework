@@ -17,6 +17,7 @@ import smtplib
 import base64
 import os
 from os.path import join as pjoin
+from subprocess import call
 
 page_template = """
     <html>
@@ -114,21 +115,22 @@ def insert_in_template(description, table_data, list_tally, column_order):
 def gen_html(stuff):
     __file__ = "prysm_output.html"
     HTMLFILE = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'HTML'))
-    f = open(HTMLFILE, 'w')
+    call(["cd", HTMLFILE])
+    f = open(__file__, 'w')
     f.write(stuff)
     f.close()
     send_email(HTMLFILE)
 
 def send_email(fileName):
 
-    fromaddr = "<INSERT SENDER'S ADDRESS>"
-    toaddrs  = "<INSERT RECEIVER'S ADDRESS>"
+    fromaddr = "<INSERT ADDRESS>"
+    toaddrs  = "<INSERT ADDRESS>"
 
     msg = "<DUMMY MESSAGE GOES HERE>"
 
     # Credentials (if needed)
-    username = '<YOUR_USERNAME>'
-    password = 'YOUR_PASSWORD'
+    username = '<INSERT USERNAME>'
+    password = '<INSERT PASSWORD>'
 
     # The actual mail send
     try:
