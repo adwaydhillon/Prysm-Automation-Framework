@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QWidget>
 
@@ -21,6 +22,8 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
 
     void setupUi(QWidget *MainWindow)
     {
@@ -29,6 +32,13 @@ public:
         MainWindow->resize(794, 595);
         MainWindow->setLayoutDirection(Qt::LeftToRight);
         MainWindow->setAutoFillBackground(true);
+        gridLayoutWidget = new QWidget(MainWindow);
+        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(0, 0, 711, 591));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout->setSizeConstraint(QLayout::SetNoConstraint);
+        gridLayout->setContentsMargins(0, 0, 0, 0);
 
         retranslateUi(MainWindow);
 
