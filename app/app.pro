@@ -13,11 +13,19 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+    home.cpp \
+    validated.cpp \
+    mainwindow.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += \
+    home.h \
+    validated.h \
+    mainwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    home.ui \
+    validated.ui \
+    mainwindow.ui
 
 RESOURCES += \
     app.qrc

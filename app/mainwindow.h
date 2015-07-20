@@ -1,13 +1,18 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QWidget>
+#include "home.h"
+#include "validated.h"
+#include <QStackedWidget>
 
 namespace Ui {
 class MainWindow;
+class Validated;
+class Home;
 }
 
-class MainWindow : public QMainWindow
+class MainWindow : public QWidget
 {
     Q_OBJECT
 
@@ -15,15 +20,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private slots:
-    void dropEvent(QDropEvent *e);
-    void dragEnterEvent(QDragEnterEvent *e);
-    void on_pushButton_clicked();
-    bool validate_proj(QString file_path);
-    bool eventFilter(QObject* o, QEvent* e);
-
 private:
     Ui::MainWindow *ui;
+    Ui::Home *home;
+    Ui::Validated *validated;
+    QStackedWidget *stackedWidget;
 };
 
 #endif // MAINWINDOW_H
