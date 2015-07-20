@@ -27,6 +27,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(794, 595);
+        MainWindow->setLayoutDirection(Qt::LeftToRight);
         MainWindow->setAutoFillBackground(true);
 
         retranslateUi(MainWindow);

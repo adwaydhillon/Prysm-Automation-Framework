@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowOpacity">
+   <double>2.000000000000000</double>
+  </property>
   <property name="autoFillBackground">
    <bool>true</bool>
   </property>
@@ -30,6 +33,9 @@
      <width>0</width>
      <height>591</height>
     </size>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
    </property>
    <property name="frameShape">
     <enum>QFrame::NoFrame</enum>

@@ -19,7 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
     stackedWidget->addWidget(validated);
     stackedWidget->setCurrentWidget(home);
 
-    home->ui();
     //home->ui()->pushButton->setEnabled(true);
 
     QHBoxLayout *layout = new QHBoxLayout;

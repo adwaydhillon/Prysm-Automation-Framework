@@ -15,17 +15,20 @@ TEMPLATE = app
 SOURCES += main.cpp\
     home.cpp \
     validated.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    configure.cpp
 
 HEADERS  += \
     home.h \
     validated.h \
-    mainwindow.h
+    mainwindow.h \
+    configure.h
 
 FORMS    += \
     home.ui \
     validated.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    configure.ui
 
 RESOURCES += \
     app.qrc

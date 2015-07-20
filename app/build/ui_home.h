@@ -34,11 +34,13 @@ public:
         if (Home->objectName().isEmpty())
             Home->setObjectName(QStringLiteral("Home"));
         Home->resize(793, 598);
+        Home->setWindowOpacity(2);
         Home->setAutoFillBackground(true);
         label = new QLabel(Home);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(0, 0, 791, 591));
         label->setMinimumSize(QSize(0, 591));
+        label->setAutoFillBackground(true);
         label->setFrameShape(QFrame::NoFrame);
         label->setFrameShadow(QFrame::Plain);
         label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/prysm_bg_3.png")));
