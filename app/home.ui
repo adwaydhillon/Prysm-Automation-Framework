@@ -107,7 +107,7 @@
   <widget class="QPushButton" name="validateButton">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>440</x>
      <y>270</y>
      <width>201</width>
      <height>41</height>

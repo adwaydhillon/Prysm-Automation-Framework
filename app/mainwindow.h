@@ -25,7 +25,6 @@ private slots:
     void on_configureButton_clicked();
     bool validate_proj(QString file_path);
 
-
 private:
     Ui::MainWindow *ui;
     Ui::Home *home;
