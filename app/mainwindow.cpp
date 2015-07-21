@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(stackedWidget);
     setLayout(layout);
-    setWindowTitle(tr("App"));
+    setWindowTitle(tr("FPGA Simulation Environment"));
 }
 
 MainWindow::~MainWindow()

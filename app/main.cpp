@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Configure w;
+    MainWindow w;
     w.showMaximized();
     return a.exec();
 }

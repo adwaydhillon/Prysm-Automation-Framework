@@ -33,12 +33,12 @@ public:
     {
         if (Home->objectName().isEmpty())
             Home->setObjectName(QStringLiteral("Home"));
-        Home->resize(793, 598);
+        Home->resize(1021, 598);
         Home->setWindowOpacity(2);
         Home->setAutoFillBackground(true);
         label = new QLabel(Home);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(0, 0, 791, 591));
+        label->setGeometry(QRect(0, 0, 761, 591));
         label->setMinimumSize(QSize(0, 591));
         label->setAutoFillBackground(true);
         label->setFrameShape(QFrame::NoFrame);
@@ -57,7 +57,7 @@ public:
         label_3->setScaledContents(true);
         label_4 = new QLabel(Home);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(0, 150, 791, 131));
+        label_4->setGeometry(QRect(0, 150, 761, 131));
         pushButton = new QPushButton(Home);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(290, 270, 201, 41));
