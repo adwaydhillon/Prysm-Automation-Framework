@@ -11,6 +11,8 @@
 #include "ui_configure.h"
 #include <QFileDialog>
 #include <QDir>
+#include <string>
+#include <QDebug>
 #include <QProcess>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -32,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(validated->ui->configureButton, SIGNAL(clicked()), this, SLOT(on_configureButton_clicked()));
 //    connect(validated->ui->testSelectionButton, SIGNAL(clicked()), this, SLOT(on_testSelectionButton_clicked()));
 //    connect(validated->ui->viewReportsButton, SIGNAL(clicked()), this, SLOT(on_viewReportsButton_clicked()));
+    connect(validated->ui->runButton, SIGNAL(clicked()), this, SLOT(on_runButton_clicked()));
 
 
     QHBoxLayout *layout = new QHBoxLayout;
@@ -57,6 +60,11 @@ void MainWindow::on_validateButton_clicked() {
 
 void MainWindow::on_configureButton_clicked() {
         stackedWidget->setCurrentIndex(2);
+//        TODO
+}
+
+void MainWindow::on_runButton_clicked() {
+//        TODO
 }
 
 bool MainWindow::validate_proj(QString proj_path) {
@@ -65,6 +73,7 @@ bool MainWindow::validate_proj(QString proj_path) {
     is_valid->start("python", QStringList() << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/validate_proj.py"
                     << proj_path);
     QByteArray output = is_valid->readAllStandardOutput();
+    qDebug() << output;
 }
 
 MainWindow::~MainWindow()

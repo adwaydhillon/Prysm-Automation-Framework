@@ -60,7 +60,7 @@ public:
         label_4->setGeometry(QRect(160, 150, 761, 131));
         validateButton = new QPushButton(Home);
         validateButton->setObjectName(QStringLiteral("validateButton"));
-        validateButton->setGeometry(QRect(450, 270, 201, 41));
+        validateButton->setGeometry(QRect(440, 270, 201, 41));
         validateButton->setMouseTracking(false);
         validateButton->setAutoFillBackground(false);
         validateButton->setStyleSheet(QLatin1String("QPushButton {\n"
