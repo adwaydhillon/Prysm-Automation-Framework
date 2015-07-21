@@ -725,9 +725,22 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qpushbutton.h \
 		../validated.h \
 		ui_mainwindow.h \
+		ui_validated.h \
 		ui_home.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QHBoxLayout \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qboxlayout.h
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qboxlayout.h \
+		../configure.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTabWidget \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtabwidget.h \
+		ui_configure.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDir \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdir.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QProcess \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qprocess.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../mainwindow.cpp
 
 configure.o: ../configure.cpp ../configure.h \
