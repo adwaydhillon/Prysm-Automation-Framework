@@ -26,11 +26,11 @@ public:
     QLabel *label;
     QLabel *label_2;
     QLabel *label_4;
-    QPushButton *pushButton;
+    QPushButton *configureButton;
     QLabel *label_3;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
+    QPushButton *runButton;
+    QPushButton *viewReportsButton;
+    QPushButton *testSelectionButton;
 
     void setupUi(QWidget *Validated)
     {
@@ -51,12 +51,12 @@ public:
         label_4 = new QLabel(Validated);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(70, 170, 791, 131));
-        pushButton = new QPushButton(Validated);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(80, 320, 201, 41));
-        pushButton->setMouseTracking(false);
-        pushButton->setAutoFillBackground(false);
-        pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
+        configureButton = new QPushButton(Validated);
+        configureButton->setObjectName(QStringLiteral("configureButton"));
+        configureButton->setGeometry(QRect(80, 320, 201, 41));
+        configureButton->setMouseTracking(false);
+        configureButton->setAutoFillBackground(false);
+        configureButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "   	font: 75 18pt \\\"Arial\\\";\n"
 "    font-weight: normal;\n"
 "    color: \"black\";\n"
@@ -67,18 +67,18 @@ public:
 "    border-color: beige;\n"
 "	padding: 6px;\n"
 "}"));
-        pushButton->setFlat(false);
+        configureButton->setFlat(false);
         label_3 = new QLabel(Validated);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(340, 0, 251, 201));
         label_3->setPixmap(QPixmap(QString::fromUtf8(":/res/res/cloud_done.png")));
         label_3->setScaledContents(true);
-        pushButton_2 = new QPushButton(Validated);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(360, 420, 221, 91));
-        pushButton_2->setMouseTracking(false);
-        pushButton_2->setAutoFillBackground(false);
-        pushButton_2->setStyleSheet(QLatin1String("QPushButton {\n"
+        runButton = new QPushButton(Validated);
+        runButton->setObjectName(QStringLiteral("runButton"));
+        runButton->setGeometry(QRect(360, 420, 221, 91));
+        runButton->setMouseTracking(false);
+        runButton->setAutoFillBackground(false);
+        runButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "   	font: 75 22pt \\\"Arial\\\";\n"
 "    font-weight: normal;\n"
 "    color: \"black\";\n"
@@ -89,13 +89,13 @@ public:
 "    border-color: beige;\n"
 "	padding: 6px;\n"
 "}"));
-        pushButton_2->setFlat(false);
-        pushButton_3 = new QPushButton(Validated);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(630, 320, 201, 41));
-        pushButton_3->setMouseTracking(false);
-        pushButton_3->setAutoFillBackground(false);
-        pushButton_3->setStyleSheet(QLatin1String("QPushButton {\n"
+        runButton->setFlat(false);
+        viewReportsButton = new QPushButton(Validated);
+        viewReportsButton->setObjectName(QStringLiteral("viewReportsButton"));
+        viewReportsButton->setGeometry(QRect(630, 320, 201, 41));
+        viewReportsButton->setMouseTracking(false);
+        viewReportsButton->setAutoFillBackground(false);
+        viewReportsButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "   	font: 75 18pt \\\"Arial\\\";\n"
 "    font-weight: normal;\n"
 "    color: \"black\";\n"
@@ -106,13 +106,13 @@ public:
 "    border-color: beige;\n"
 "	padding: 6px;\n"
 "}"));
-        pushButton_3->setFlat(false);
-        pushButton_4 = new QPushButton(Validated);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(370, 320, 201, 41));
-        pushButton_4->setMouseTracking(false);
-        pushButton_4->setAutoFillBackground(false);
-        pushButton_4->setStyleSheet(QLatin1String("QPushButton {\n"
+        viewReportsButton->setFlat(false);
+        testSelectionButton = new QPushButton(Validated);
+        testSelectionButton->setObjectName(QStringLiteral("testSelectionButton"));
+        testSelectionButton->setGeometry(QRect(370, 320, 201, 41));
+        testSelectionButton->setMouseTracking(false);
+        testSelectionButton->setAutoFillBackground(false);
+        testSelectionButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "   	font: 75 18pt \\\"Arial\\\";\n"
 "    font-weight: normal;\n"
 "    color: \"black\";\n"
@@ -123,7 +123,7 @@ public:
 "    border-color: beige;\n"
 "	padding: 6px;\n"
 "}"));
-        pushButton_4->setFlat(false);
+        testSelectionButton->setFlat(false);
 
         retranslateUi(Validated);
 
@@ -136,11 +136,11 @@ public:
         label->setText(QString());
         label_2->setText(QString());
         label_4->setText(QApplication::translate("Validated", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#ffffff;\">Project path validated!</span></p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#ffffff;\">Choose an option:</span></p></body></html>", 0));
-        pushButton->setText(QApplication::translate("Validated", "Configure", 0));
+        configureButton->setText(QApplication::translate("Validated", "Configure", 0));
         label_3->setText(QString());
-        pushButton_2->setText(QApplication::translate("Validated", "Run", 0));
-        pushButton_3->setText(QApplication::translate("Validated", "View Reports", 0));
-        pushButton_4->setText(QApplication::translate("Validated", "Suite/Test Selection", 0));
+        runButton->setText(QApplication::translate("Validated", "Run", 0));
+        viewReportsButton->setText(QApplication::translate("Validated", "View Reports", 0));
+        testSelectionButton->setText(QApplication::translate("Validated", "Suite/Test Selection", 0));
     } // retranslateUi
 
 };

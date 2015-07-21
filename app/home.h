@@ -21,11 +21,9 @@ public:
     ~Home();
 
 private slots:
-    void dropEvent(QDropEvent *e);
-    void dragEnterEvent(QDragEnterEvent *e);
-    void on_pushButton_clicked();
-    bool validate_proj(QString file_path);
-    bool eventFilter(QObject* o, QEvent* e);
+//    void dropEvent(QDropEvent *e);
+//    void dragEnterEvent(QDragEnterEvent *e);
+//    bool eventFilter(QObject* o, QEvent* e);
 
 private:
 };

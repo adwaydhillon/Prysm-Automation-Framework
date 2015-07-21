@@ -21,7 +21,10 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_validateButton_clicked();
+    void on_configureButton_clicked();
+    bool validate_proj(QString file_path);
+
 
 private:
     Ui::MainWindow *ui;

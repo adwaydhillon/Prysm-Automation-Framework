@@ -27,7 +27,7 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QLabel *label_4;
-    QPushButton *pushButton;
+    QPushButton *validateButton;
 
     void setupUi(QWidget *Home)
     {
@@ -58,12 +58,12 @@ public:
         label_4 = new QLabel(Home);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(160, 150, 761, 131));
-        pushButton = new QPushButton(Home);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(450, 270, 201, 41));
-        pushButton->setMouseTracking(false);
-        pushButton->setAutoFillBackground(false);
-        pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
+        validateButton = new QPushButton(Home);
+        validateButton->setObjectName(QStringLiteral("validateButton"));
+        validateButton->setGeometry(QRect(450, 270, 201, 41));
+        validateButton->setMouseTracking(false);
+        validateButton->setAutoFillBackground(false);
+        validateButton->setStyleSheet(QLatin1String("QPushButton {\n"
 "   	font: 75 18pt \\\"Arial\\\";\n"
 "    font-weight: normal;\n"
 "    color: \"black\";\n"
@@ -74,7 +74,7 @@ public:
 "    border-color: beige;\n"
 "	padding: 6px;\n"
 "}"));
-        pushButton->setFlat(false);
+        validateButton->setFlat(false);
 
         retranslateUi(Home);
 
@@ -88,7 +88,7 @@ public:
         label_2->setText(QString());
         label_3->setText(QString());
         label_4->setText(QApplication::translate("Home", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#ffffff;\">Drag &amp; Drop a Folder </span></p><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#ffffff;\">or</span></p></body></html>", 0));
-        pushButton->setText(QApplication::translate("Home", "Select a project", 0));
+        validateButton->setText(QApplication::translate("Home", "Select a project", 0));
     } // retranslateUi
 
 };
