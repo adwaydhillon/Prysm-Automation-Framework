@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     stackedWidget->addWidget(validated);
     stackedWidget->setCurrentIndex(0);
 
-    connect(home->ui->pushButton, SIGNAL(clicked()), this, SLOT(changeView()));
+    connect(home->ui->pushButton, SIGNAL(clicked()), this, SLOT(on_pushButton_clicked()));
 //    home->ui->pushButton->setEnabled(true);
 //    home->ui()->pushButton->setEnabled(true);
 
@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowTitle(tr("FPGA Simulation Environment"));
 }
 
-void MainWindow::changeView() {
+void MainWindow::on_pushButton_clicked() {
     stackedWidget->setCurrentIndex(1);
 }
 
