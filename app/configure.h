@@ -16,11 +16,6 @@ public:
     ~Configure();
 
 private slots:
-    void on_pushButton_13_clicked();
-
-    void on_pushButton_12_clicked();
-
-    void on_pushButton_15_clicked();
 
 private:
     Ui::Configure *ui;

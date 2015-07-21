@@ -23,7 +23,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="currentIndex">
-   <number>1</number>
+   <number>0</number>
   </property>
   <property name="usesScrollButtons">
    <bool>false</bool>
@@ -221,124 +221,124 @@
      <item row="2" column="1">
       <widget class="QLineEdit" name="pythonPathLineEdit"/>
      </item>
-     <item row="4" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="lM_LICENSE_FILELabel">
        <property name="text">
         <string>modelsPath:</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
+     <item row="3" column="1">
       <widget class="QLineEdit" name="lM_LICENSE_FILELineEdit"/>
      </item>
-     <item row="5" column="0">
+     <item row="4" column="0">
       <widget class="QLabel" name="lD_PRELOADLabel">
        <property name="text">
         <string>TB_scriptsPath:</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="1">
+     <item row="4" column="1">
       <widget class="QLineEdit" name="lD_PRELOADLineEdit"/>
      </item>
-     <item row="6" column="0">
+     <item row="5" column="0">
       <widget class="QLabel" name="unisims_verLabel">
        <property name="text">
         <string>toolScriptsPath:</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
+     <item row="5" column="1">
       <widget class="QLineEdit" name="unisims_verLineEdit"/>
      </item>
-     <item row="7" column="0">
+     <item row="6" column="0">
       <widget class="QLabel" name="secureipLabel">
        <property name="text">
         <string>suitePath:</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="1">
+     <item row="6" column="1">
       <widget class="QLineEdit" name="secureipLineEdit"/>
      </item>
-     <item row="8" column="0">
+     <item row="7" column="0">
       <widget class="QLabel" name="simprims_verLabel">
        <property name="text">
         <string>prepFile:</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="1">
+     <item row="7" column="1">
       <widget class="QLineEdit" name="simprims_verLineEdit"/>
      </item>
-     <item row="9" column="0">
+     <item row="8" column="0">
       <widget class="QLabel" name="xilinxcorelib_verLabel">
        <property name="text">
         <string>postProcFile:</string>
        </property>
       </widget>
      </item>
-     <item row="9" column="1">
+     <item row="8" column="1">
       <widget class="QLineEdit" name="xilinxcorelib_verLineEdit"/>
      </item>
-     <item row="10" column="0">
+     <item row="9" column="0">
       <widget class="QLabel" name="glblPathLabel">
        <property name="text">
         <string>topModule:</string>
        </property>
       </widget>
      </item>
-     <item row="10" column="1">
+     <item row="9" column="1">
       <widget class="QLineEdit" name="glblPathLineEdit"/>
      </item>
-     <item row="11" column="0">
+     <item row="10" column="0">
       <widget class="QLabel" name="runDirPathLabel">
        <property name="text">
         <string>coverEn:</string>
        </property>
       </widget>
      </item>
-     <item row="11" column="1">
+     <item row="10" column="1">
       <widget class="QLineEdit" name="runDirPathLineEdit"/>
      </item>
-     <item row="12" column="0">
+     <item row="11" column="0">
       <widget class="QLabel" name="logDirPathLabel">
        <property name="text">
         <string>optEn:</string>
        </property>
       </widget>
      </item>
-     <item row="12" column="1">
+     <item row="11" column="1">
       <widget class="QLineEdit" name="logDirPathLineEdit"/>
      </item>
-     <item row="13" column="0">
+     <item row="12" column="0">
       <widget class="QLabel" name="waveDumpLabel">
        <property name="text">
         <string>waveDump:</string>
        </property>
       </widget>
      </item>
-     <item row="13" column="1">
+     <item row="12" column="1">
       <widget class="QLineEdit" name="waveDumpLineEdit"/>
      </item>
-     <item row="14" column="0">
+     <item row="13" column="0">
       <widget class="QLabel" name="modeLabel">
        <property name="text">
         <string>mode:</string>
        </property>
       </widget>
      </item>
-     <item row="14" column="1">
+     <item row="13" column="1">
       <widget class="QLineEdit" name="modeLineEdit"/>
      </item>
-     <item row="15" column="0">
+     <item row="14" column="0">
       <widget class="QLabel" name="simResFileLabel">
        <property name="text">
         <string>simResFile:</string>
        </property>
       </widget>
      </item>
-     <item row="15" column="1">
+     <item row="14" column="1">
       <widget class="QLineEdit" name="simResFileLineEdit"/>
      </item>
     </layout>
