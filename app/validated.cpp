@@ -1,5 +1,6 @@
 #include "validated.h"
 #include "ui_validated.h"
+#include <QProcess>
 
 Validated::Validated(QWidget *parent) :
     QWidget(parent),
@@ -18,7 +19,7 @@ void Validated::on_pushButton_2_clicked()
 {
     QProcess *run = new QProcess(this);
     run->setProcessChannelMode(QProcess::ForwardedChannels);
-    run->start("python", QStringList() << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/reportGen.py"
-                    << proj_path);
-    QByteArray output = run->readAllStandardOutput();
+//    run->start("python", QStringList() << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/reportGen.py"
+//                    << proj_path);
+//    QByteArray output = run->readAllStandardOutput();
 }

@@ -38,7 +38,7 @@ public:
         Home->setAutoFillBackground(true);
         label = new QLabel(Home);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(0, 0, 761, 591));
+        label->setGeometry(QRect(0, 0, 1021, 591));
         label->setMinimumSize(QSize(0, 591));
         label->setAutoFillBackground(true);
         label->setFrameShape(QFrame::NoFrame);
@@ -52,15 +52,15 @@ public:
         label_2->setScaledContents(true);
         label_3 = new QLabel(Home);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(270, 0, 251, 201));
+        label_3->setGeometry(QRect(410, 0, 251, 201));
         label_3->setPixmap(QPixmap(QString::fromUtf8(":/res/res/cloud_upload.png")));
         label_3->setScaledContents(true);
         label_4 = new QLabel(Home);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(0, 150, 761, 131));
+        label_4->setGeometry(QRect(160, 150, 761, 131));
         pushButton = new QPushButton(Home);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(290, 270, 201, 41));
+        pushButton->setGeometry(QRect(450, 270, 201, 41));
         pushButton->setMouseTracking(false);
         pushButton->setAutoFillBackground(false);
         pushButton->setStyleSheet(QLatin1String("QPushButton {\n"

@@ -15,6 +15,9 @@ public:
     explicit Validated(QWidget *parent = 0);
     ~Validated();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Validated *ui;
 };

@@ -403,6 +403,7 @@ public:
         simPathLineEdit_2->setText(QString());
         simPathLineEdit_2->setPlaceholderText(QString());
         perlPathLabel_2->setText(QApplication::translate("Configure", "perlPath:", 0));
+        perlPathLineEdit_2->setText(QString());
         pythonPathLabel_2->setText(QApplication::translate("Configure", "pythonPath:", 0));
         lM_LICENSE_FILELabel_2->setText(QApplication::translate("Configure", "LM_LICENSE_FILE:", 0));
         lD_PRELOADLabel_2->setText(QApplication::translate("Configure", "LD_PRELOAD:", 0));
