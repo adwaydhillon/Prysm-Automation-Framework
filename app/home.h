@@ -15,7 +15,7 @@ class Home : public QWidget
 
 public:
     explicit Home(QWidget *parent = 0);
-//    Ui::Home *ui() const { return ui; }
+    Ui::Home *ui() const { return ui; }
     ~Home();
 
 private slots:
@@ -26,7 +26,7 @@ private slots:
     bool eventFilter(QObject* o, QEvent* e);
 
 private:
-    Ui::Home *ui;
+//    Ui::Home *ui;
 };
 
 #endif // HOME_H
