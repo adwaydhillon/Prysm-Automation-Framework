@@ -103,7 +103,7 @@ public:
         sim_tab->setObjectName(QStringLiteral("sim_tab"));
         formLayoutWidget_2 = new QWidget(sim_tab);
         formLayoutWidget_2->setObjectName(QStringLiteral("formLayoutWidget_2"));
-        formLayoutWidget_2->setGeometry(QRect(0, 0, 851, 561));
+        formLayoutWidget_2->setGeometry(QRect(0, 0, 1011, 561));
         formLayout_2 = new QFormLayout(formLayoutWidget_2);
         formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
         formLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -400,6 +400,8 @@ public:
     {
         Configure->setWindowTitle(QApplication::translate("Configure", "TabWidget", 0));
         simPathLabel_2->setText(QApplication::translate("Configure", "simPath:", 0));
+        simPathLineEdit_2->setText(QString());
+        simPathLineEdit_2->setPlaceholderText(QString());
         perlPathLabel_2->setText(QApplication::translate("Configure", "perlPath:", 0));
         pythonPathLabel_2->setText(QApplication::translate("Configure", "pythonPath:", 0));
         lM_LICENSE_FILELabel_2->setText(QApplication::translate("Configure", "LM_LICENSE_FILE:", 0));
