@@ -34,7 +34,7 @@ public:
         MainWindow->setAutoFillBackground(true);
         gridLayoutWidget = new QWidget(MainWindow);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 0, 711, 591));
+        gridLayoutWidget->setGeometry(QRect(0, 0, 791, 591));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setSizeConstraint(QLayout::SetNoConstraint);

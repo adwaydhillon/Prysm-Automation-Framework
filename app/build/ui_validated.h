@@ -36,11 +36,11 @@ public:
     {
         if (Validated->objectName().isEmpty())
             Validated->setObjectName(QStringLiteral("Validated"));
-        Validated->resize(794, 594);
+        Validated->resize(907, 594);
         Validated->setAutoFillBackground(true);
         label = new QLabel(Validated);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(0, 0, 791, 591));
+        label->setGeometry(QRect(0, 0, 911, 591));
         label->setPixmap(QPixmap(QString::fromUtf8(":/res/res/prysm_bg_3.png")));
         label->setScaledContents(true);
         label_2 = new QLabel(Validated);
@@ -50,10 +50,10 @@ public:
         label_2->setScaledContents(true);
         label_4 = new QLabel(Validated);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(0, 170, 791, 131));
+        label_4->setGeometry(QRect(70, 170, 791, 131));
         pushButton = new QPushButton(Validated);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(20, 320, 201, 41));
+        pushButton->setGeometry(QRect(80, 320, 201, 41));
         pushButton->setMouseTracking(false);
         pushButton->setAutoFillBackground(false);
         pushButton->setStyleSheet(QLatin1String("QPushButton {\n"
@@ -70,12 +70,12 @@ public:
         pushButton->setFlat(false);
         label_3 = new QLabel(Validated);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(280, 0, 251, 201));
+        label_3->setGeometry(QRect(340, 0, 251, 201));
         label_3->setPixmap(QPixmap(QString::fromUtf8(":/res/res/cloud_done.png")));
         label_3->setScaledContents(true);
         pushButton_2 = new QPushButton(Validated);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(300, 420, 221, 91));
+        pushButton_2->setGeometry(QRect(360, 420, 221, 91));
         pushButton_2->setMouseTracking(false);
         pushButton_2->setAutoFillBackground(false);
         pushButton_2->setStyleSheet(QLatin1String("QPushButton {\n"
@@ -92,7 +92,7 @@ public:
         pushButton_2->setFlat(false);
         pushButton_3 = new QPushButton(Validated);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(570, 320, 201, 41));
+        pushButton_3->setGeometry(QRect(630, 320, 201, 41));
         pushButton_3->setMouseTracking(false);
         pushButton_3->setAutoFillBackground(false);
         pushButton_3->setStyleSheet(QLatin1String("QPushButton {\n"
@@ -109,7 +109,7 @@ public:
         pushButton_3->setFlat(false);
         pushButton_4 = new QPushButton(Validated);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(310, 320, 201, 41));
+        pushButton_4->setGeometry(QRect(370, 320, 201, 41));
         pushButton_4->setMouseTracking(false);
         pushButton_4->setAutoFillBackground(false);
         pushButton_4->setStyleSheet(QLatin1String("QPushButton {\n"
