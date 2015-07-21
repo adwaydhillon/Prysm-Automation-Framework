@@ -17,14 +17,20 @@ MainWindow::MainWindow(QWidget *parent) :
     stackedWidget = new QStackedWidget;
     stackedWidget->addWidget(home);
     stackedWidget->addWidget(validated);
-    stackedWidget->setCurrentWidget(home);
+    stackedWidget->setCurrentIndex(0);
 
-    //home->ui()->pushButton->setEnabled(true);
+    connect(home->ui->pushButton, SIGNAL(clicked()), this, SLOT(changeView()));
+//    home->ui->pushButton->setEnabled(true);
+//    home->ui()->pushButton->setEnabled(true);
 
     QHBoxLayout *layout = new QHBoxLayout;
     layout->addWidget(stackedWidget);
     setLayout(layout);
     setWindowTitle(tr("FPGA Simulation Environment"));
+}
+
+void MainWindow::changeView() {
+    stackedWidget->setCurrentIndex(1);
 }
 
 MainWindow::~MainWindow()

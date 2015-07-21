@@ -710,7 +710,9 @@ home.o: ../home.cpp ../home.h \
 validated.o: ../validated.cpp ../validated.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
-		ui_validated.h
+		ui_validated.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QProcess \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qprocess.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o validated.o ../validated.cpp
 
 mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
