@@ -55,23 +55,25 @@ void MainWindow::on_validateButton_clicked() {
     if (validate_proj(proj_path)) {
         qDebug() << "File Path:" << proj_path;
         stackedWidget->setCurrentIndex(1);
-    } else {
-
     }
 }
 
 bool MainWindow::validate_proj(QString proj_path) {
     QProcess *is_valid = new QProcess(this);
-    is_valid->setProcessChannelMode(QProcess::ForwardedChannels);
-    is_valid->start("python", QStringList() << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/validate_proj.py"
-                    << proj_path);
-
-
+    QString exec = "python";
+    QStringList params;
+    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/validate_proj.py" << proj_path;
+    is_valid->start(exec, params);
+    is_valid->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
     QString output(is_valid->readAllStandardOutput());
 
+    output = output.simplified();
+    output.replace( " ", "" );
 
-//    QString output = (QString)is_valid->readAllStandardOutput();
-    qDebug() << "here   "<< output;
+    if (output == "validated") {
+        return true;
+    }
+    return false;
 }
 
 void MainWindow::on_configureButton_clicked() {

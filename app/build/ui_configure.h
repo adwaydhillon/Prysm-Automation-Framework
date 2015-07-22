@@ -90,7 +90,7 @@ public:
     {
         if (Configure->objectName().isEmpty())
             Configure->setObjectName(QStringLiteral("Configure"));
-        Configure->resize(1015, 746);
+        Configure->resize(1101, 746);
         Configure->setAutoFillBackground(true);
         Configure->setTabPosition(QTabWidget::North);
         Configure->setTabShape(QTabWidget::Rounded);
@@ -103,7 +103,7 @@ public:
         sim_tab->setObjectName(QStringLiteral("sim_tab"));
         formLayoutWidget_2 = new QWidget(sim_tab);
         formLayoutWidget_2->setObjectName(QStringLiteral("formLayoutWidget_2"));
-        formLayoutWidget_2->setGeometry(QRect(0, 0, 1011, 561));
+        formLayoutWidget_2->setGeometry(QRect(0, 0, 1011, 391));
         formLayout_2 = new QFormLayout(formLayoutWidget_2);
         formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
         formLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -232,7 +232,7 @@ public:
         run_tab->setObjectName(QStringLiteral("run_tab"));
         formLayoutWidget = new QWidget(run_tab);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(0, 0, 851, 561));
+        formLayoutWidget->setGeometry(QRect(0, 0, 1011, 721));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
