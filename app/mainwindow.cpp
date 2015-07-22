@@ -52,10 +52,26 @@ void MainWindow::on_validateButton_clicked() {
                                                     QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
                                                     );
 
-//    if (validate_proj(proj_path)) {
-//        qDebug() << "File Path:" << proj_path;
+    if (validate_proj(proj_path)) {
+        qDebug() << "File Path:" << proj_path;
         stackedWidget->setCurrentIndex(1);
-//    }
+    } else {
+
+    }
+}
+
+bool MainWindow::validate_proj(QString proj_path) {
+    QProcess *is_valid = new QProcess(this);
+    is_valid->setProcessChannelMode(QProcess::ForwardedChannels);
+    is_valid->start("python", QStringList() << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/validate_proj.py"
+                    << proj_path);
+
+
+    QString output(is_valid->readAllStandardOutput());
+
+
+//    QString output = (QString)is_valid->readAllStandardOutput();
+    qDebug() << "here   "<< output;
 }
 
 void MainWindow::on_configureButton_clicked() {
@@ -67,14 +83,7 @@ void MainWindow::on_runButton_clicked() {
 //        TODO
 }
 
-bool MainWindow::validate_proj(QString proj_path) {
-    QProcess *is_valid = new QProcess(this);
-    is_valid->setProcessChannelMode(QProcess::ForwardedChannels);
-    is_valid->start("python", QStringList() << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/validate_proj.py"
-                    << proj_path);
-    QByteArray output = is_valid->readAllStandardOutput();
-    qDebug() << output;
-}
+
 
 MainWindow::~MainWindow()
 {
