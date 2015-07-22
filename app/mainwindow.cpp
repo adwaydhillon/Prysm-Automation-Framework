@@ -30,8 +30,6 @@ MainWindow::MainWindow(QWidget *parent) :
     stackedWidget->addWidget(configure);
     stackedWidget->setCurrentIndex(0);
 
-    configure->ui->simPathLineEdit_2->setText("ahsvds");
-
     connect(home->ui->validateButton, SIGNAL(clicked()), this, SLOT(on_validateButton_clicked()));
     connect(validated->ui->configureButton, SIGNAL(clicked()), this, SLOT(on_configureButton_clicked()));
 //    connect(validated->ui->testSelectionButton, SIGNAL(clicked()), this, SLOT(on_testSelectionButton_clicked()));
@@ -57,6 +55,7 @@ void MainWindow::on_validateButton_clicked() {
     if (validate_proj(proj_path)) {
         qDebug() << "File Path:" << proj_path;
         stackedWidget->setCurrentIndex(1);
+        populateConfigDetails(proj_path);
     }
 }
 
@@ -76,6 +75,21 @@ bool MainWindow::validate_proj(QString proj_path) {
         return true;
     }
     return false;
+}
+
+void MainWindow::populateConfigDetails(QString proj_path) {
+    QString sim_env_path = proj_path + "/simEnvConfig.yaml";
+    QString test_run_path = proj_path + "/testRunConfig.yaml";
+
+    //Running the Simulation Environment first
+    QProcess *scrape_config = new QProcess(this);
+    QString exec = "python";
+    QStringList params;
+    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/scrape_config.py" << sim_env_path;
+    scrape_config->start(exec, params);
+    scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
+    QString output(scrape_config->readAllStandardOutput());
+    qDebug() << output;
 }
 
 void MainWindow::on_configureButton_clicked() {

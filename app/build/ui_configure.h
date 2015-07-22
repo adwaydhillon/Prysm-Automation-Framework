@@ -29,56 +29,56 @@ public:
     QWidget *formLayoutWidget_2;
     QFormLayout *formLayout_2;
     QLabel *simPathLabel_2;
-    QLineEdit *simPathLineEdit_2;
+    QLineEdit *simPathLineEdit;
     QLabel *perlPathLabel_2;
     QLineEdit *perlPathLineEdit_2;
     QLabel *pythonPathLabel_2;
-    QLineEdit *pythonPathLineEdit_2;
+    QLineEdit *pythonPathLineEdit;
     QLabel *lM_LICENSE_FILELabel_2;
-    QLineEdit *lM_LICENSE_FILELineEdit_2;
+    QLineEdit *lM_LICENSE_FILELineEdit;
     QLabel *lD_PRELOADLabel_2;
-    QLineEdit *lD_PRELOADLineEdit_2;
+    QLineEdit *lD_PRELOADLineEdit;
     QLabel *unisims_verLabel_2;
-    QLineEdit *unisims_verLineEdit_2;
+    QLineEdit *unisims_verLineEdit;
     QLabel *secureipLabel_2;
-    QLineEdit *secureipLineEdit_2;
+    QLineEdit *secureipLineEdit;
     QLabel *simprims_verLabel_2;
-    QLineEdit *simprims_verLineEdit_2;
+    QLineEdit *simprims_verLineEdit;
     QLabel *xilinxcorelib_verLabel_2;
-    QLineEdit *xilinxcorelib_verLineEdit_2;
+    QLineEdit *xilinxcorelib_verLineEdit;
     QLabel *glblPathLabel_2;
-    QLineEdit *glblPathLineEdit_2;
+    QLineEdit *glblPathLineEdit;
     QLabel *runDirPathLabel_2;
-    QLineEdit *runDirPathLineEdit_2;
+    QLineEdit *runDirPathLineEdit;
     QLabel *logDirPathLabel_2;
-    QLineEdit *logDirPathLineEdit_2;
+    QLineEdit *logDirPathLineEdit;
     QWidget *run_tab;
     QWidget *formLayoutWidget;
     QFormLayout *formLayout;
     QLabel *simPathLabel;
-    QLineEdit *simPathLineEdit;
-    QLabel *perlPathLabel;
+    QLineEdit *RTL_pathLineEdit;
+    QLabel *RTL_memLoadPathLabel;
     QLineEdit *perlPathLineEdit;
     QLabel *pythonPathLabel;
-    QLineEdit *pythonPathLineEdit;
+    QLineEdit *DV_PathLineEdit;
     QLabel *lM_LICENSE_FILELabel;
-    QLineEdit *lM_LICENSE_FILELineEdit;
+    QLineEdit *modelsPathLineEdit;
     QLabel *lD_PRELOADLabel;
-    QLineEdit *lD_PRELOADLineEdit;
+    QLineEdit *TB_scriptsPathLineEdit;
     QLabel *unisims_verLabel;
-    QLineEdit *unisims_verLineEdit;
+    QLineEdit *toolScriptsPathLineEdit;
     QLabel *secureipLabel;
-    QLineEdit *secureipLineEdit;
+    QLineEdit *suitePathLineEdit;
     QLabel *simprims_verLabel;
-    QLineEdit *simprims_verLineEdit;
+    QLineEdit *prepFileLineEdit;
     QLabel *xilinxcorelib_verLabel;
-    QLineEdit *xilinxcorelib_verLineEdit;
+    QLineEdit *postProcFileLineEdit;
     QLabel *glblPathLabel;
-    QLineEdit *glblPathLineEdit;
+    QLineEdit *topModuleLineEdit;
     QLabel *runDirPathLabel;
-    QLineEdit *runDirPathLineEdit;
+    QLineEdit *coverEnLineEdit;
     QLabel *logDirPathLabel;
-    QLineEdit *logDirPathLineEdit;
+    QLineEdit *optEnLineEdit;
     QLabel *waveDumpLabel;
     QLineEdit *waveDumpLineEdit;
     QLabel *modeLabel;
@@ -112,10 +112,10 @@ public:
 
         formLayout_2->setWidget(0, QFormLayout::LabelRole, simPathLabel_2);
 
-        simPathLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        simPathLineEdit_2->setObjectName(QStringLiteral("simPathLineEdit_2"));
+        simPathLineEdit = new QLineEdit(formLayoutWidget_2);
+        simPathLineEdit->setObjectName(QStringLiteral("simPathLineEdit"));
 
-        formLayout_2->setWidget(0, QFormLayout::FieldRole, simPathLineEdit_2);
+        formLayout_2->setWidget(0, QFormLayout::FieldRole, simPathLineEdit);
 
         perlPathLabel_2 = new QLabel(formLayoutWidget_2);
         perlPathLabel_2->setObjectName(QStringLiteral("perlPathLabel_2"));
@@ -132,100 +132,100 @@ public:
 
         formLayout_2->setWidget(2, QFormLayout::LabelRole, pythonPathLabel_2);
 
-        pythonPathLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        pythonPathLineEdit_2->setObjectName(QStringLiteral("pythonPathLineEdit_2"));
+        pythonPathLineEdit = new QLineEdit(formLayoutWidget_2);
+        pythonPathLineEdit->setObjectName(QStringLiteral("pythonPathLineEdit"));
 
-        formLayout_2->setWidget(2, QFormLayout::FieldRole, pythonPathLineEdit_2);
+        formLayout_2->setWidget(2, QFormLayout::FieldRole, pythonPathLineEdit);
 
         lM_LICENSE_FILELabel_2 = new QLabel(formLayoutWidget_2);
         lM_LICENSE_FILELabel_2->setObjectName(QStringLiteral("lM_LICENSE_FILELabel_2"));
 
         formLayout_2->setWidget(4, QFormLayout::LabelRole, lM_LICENSE_FILELabel_2);
 
-        lM_LICENSE_FILELineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        lM_LICENSE_FILELineEdit_2->setObjectName(QStringLiteral("lM_LICENSE_FILELineEdit_2"));
+        lM_LICENSE_FILELineEdit = new QLineEdit(formLayoutWidget_2);
+        lM_LICENSE_FILELineEdit->setObjectName(QStringLiteral("lM_LICENSE_FILELineEdit"));
 
-        formLayout_2->setWidget(4, QFormLayout::FieldRole, lM_LICENSE_FILELineEdit_2);
+        formLayout_2->setWidget(4, QFormLayout::FieldRole, lM_LICENSE_FILELineEdit);
 
         lD_PRELOADLabel_2 = new QLabel(formLayoutWidget_2);
         lD_PRELOADLabel_2->setObjectName(QStringLiteral("lD_PRELOADLabel_2"));
 
         formLayout_2->setWidget(5, QFormLayout::LabelRole, lD_PRELOADLabel_2);
 
-        lD_PRELOADLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        lD_PRELOADLineEdit_2->setObjectName(QStringLiteral("lD_PRELOADLineEdit_2"));
+        lD_PRELOADLineEdit = new QLineEdit(formLayoutWidget_2);
+        lD_PRELOADLineEdit->setObjectName(QStringLiteral("lD_PRELOADLineEdit"));
 
-        formLayout_2->setWidget(5, QFormLayout::FieldRole, lD_PRELOADLineEdit_2);
+        formLayout_2->setWidget(5, QFormLayout::FieldRole, lD_PRELOADLineEdit);
 
         unisims_verLabel_2 = new QLabel(formLayoutWidget_2);
         unisims_verLabel_2->setObjectName(QStringLiteral("unisims_verLabel_2"));
 
         formLayout_2->setWidget(6, QFormLayout::LabelRole, unisims_verLabel_2);
 
-        unisims_verLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        unisims_verLineEdit_2->setObjectName(QStringLiteral("unisims_verLineEdit_2"));
+        unisims_verLineEdit = new QLineEdit(formLayoutWidget_2);
+        unisims_verLineEdit->setObjectName(QStringLiteral("unisims_verLineEdit"));
 
-        formLayout_2->setWidget(6, QFormLayout::FieldRole, unisims_verLineEdit_2);
+        formLayout_2->setWidget(6, QFormLayout::FieldRole, unisims_verLineEdit);
 
         secureipLabel_2 = new QLabel(formLayoutWidget_2);
         secureipLabel_2->setObjectName(QStringLiteral("secureipLabel_2"));
 
         formLayout_2->setWidget(7, QFormLayout::LabelRole, secureipLabel_2);
 
-        secureipLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        secureipLineEdit_2->setObjectName(QStringLiteral("secureipLineEdit_2"));
+        secureipLineEdit = new QLineEdit(formLayoutWidget_2);
+        secureipLineEdit->setObjectName(QStringLiteral("secureipLineEdit"));
 
-        formLayout_2->setWidget(7, QFormLayout::FieldRole, secureipLineEdit_2);
+        formLayout_2->setWidget(7, QFormLayout::FieldRole, secureipLineEdit);
 
         simprims_verLabel_2 = new QLabel(formLayoutWidget_2);
         simprims_verLabel_2->setObjectName(QStringLiteral("simprims_verLabel_2"));
 
         formLayout_2->setWidget(8, QFormLayout::LabelRole, simprims_verLabel_2);
 
-        simprims_verLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        simprims_verLineEdit_2->setObjectName(QStringLiteral("simprims_verLineEdit_2"));
+        simprims_verLineEdit = new QLineEdit(formLayoutWidget_2);
+        simprims_verLineEdit->setObjectName(QStringLiteral("simprims_verLineEdit"));
 
-        formLayout_2->setWidget(8, QFormLayout::FieldRole, simprims_verLineEdit_2);
+        formLayout_2->setWidget(8, QFormLayout::FieldRole, simprims_verLineEdit);
 
         xilinxcorelib_verLabel_2 = new QLabel(formLayoutWidget_2);
         xilinxcorelib_verLabel_2->setObjectName(QStringLiteral("xilinxcorelib_verLabel_2"));
 
         formLayout_2->setWidget(9, QFormLayout::LabelRole, xilinxcorelib_verLabel_2);
 
-        xilinxcorelib_verLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        xilinxcorelib_verLineEdit_2->setObjectName(QStringLiteral("xilinxcorelib_verLineEdit_2"));
+        xilinxcorelib_verLineEdit = new QLineEdit(formLayoutWidget_2);
+        xilinxcorelib_verLineEdit->setObjectName(QStringLiteral("xilinxcorelib_verLineEdit"));
 
-        formLayout_2->setWidget(9, QFormLayout::FieldRole, xilinxcorelib_verLineEdit_2);
+        formLayout_2->setWidget(9, QFormLayout::FieldRole, xilinxcorelib_verLineEdit);
 
         glblPathLabel_2 = new QLabel(formLayoutWidget_2);
         glblPathLabel_2->setObjectName(QStringLiteral("glblPathLabel_2"));
 
         formLayout_2->setWidget(10, QFormLayout::LabelRole, glblPathLabel_2);
 
-        glblPathLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        glblPathLineEdit_2->setObjectName(QStringLiteral("glblPathLineEdit_2"));
+        glblPathLineEdit = new QLineEdit(formLayoutWidget_2);
+        glblPathLineEdit->setObjectName(QStringLiteral("glblPathLineEdit"));
 
-        formLayout_2->setWidget(10, QFormLayout::FieldRole, glblPathLineEdit_2);
+        formLayout_2->setWidget(10, QFormLayout::FieldRole, glblPathLineEdit);
 
         runDirPathLabel_2 = new QLabel(formLayoutWidget_2);
         runDirPathLabel_2->setObjectName(QStringLiteral("runDirPathLabel_2"));
 
         formLayout_2->setWidget(11, QFormLayout::LabelRole, runDirPathLabel_2);
 
-        runDirPathLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        runDirPathLineEdit_2->setObjectName(QStringLiteral("runDirPathLineEdit_2"));
+        runDirPathLineEdit = new QLineEdit(formLayoutWidget_2);
+        runDirPathLineEdit->setObjectName(QStringLiteral("runDirPathLineEdit"));
 
-        formLayout_2->setWidget(11, QFormLayout::FieldRole, runDirPathLineEdit_2);
+        formLayout_2->setWidget(11, QFormLayout::FieldRole, runDirPathLineEdit);
 
         logDirPathLabel_2 = new QLabel(formLayoutWidget_2);
         logDirPathLabel_2->setObjectName(QStringLiteral("logDirPathLabel_2"));
 
         formLayout_2->setWidget(12, QFormLayout::LabelRole, logDirPathLabel_2);
 
-        logDirPathLineEdit_2 = new QLineEdit(formLayoutWidget_2);
-        logDirPathLineEdit_2->setObjectName(QStringLiteral("logDirPathLineEdit_2"));
+        logDirPathLineEdit = new QLineEdit(formLayoutWidget_2);
+        logDirPathLineEdit->setObjectName(QStringLiteral("logDirPathLineEdit"));
 
-        formLayout_2->setWidget(12, QFormLayout::FieldRole, logDirPathLineEdit_2);
+        formLayout_2->setWidget(12, QFormLayout::FieldRole, logDirPathLineEdit);
 
         Configure->addTab(sim_tab, QString());
         run_tab = new QWidget();
@@ -241,15 +241,15 @@ public:
 
         formLayout->setWidget(0, QFormLayout::LabelRole, simPathLabel);
 
-        simPathLineEdit = new QLineEdit(formLayoutWidget);
-        simPathLineEdit->setObjectName(QStringLiteral("simPathLineEdit"));
+        RTL_pathLineEdit = new QLineEdit(formLayoutWidget);
+        RTL_pathLineEdit->setObjectName(QStringLiteral("RTL_pathLineEdit"));
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, simPathLineEdit);
+        formLayout->setWidget(0, QFormLayout::FieldRole, RTL_pathLineEdit);
 
-        perlPathLabel = new QLabel(formLayoutWidget);
-        perlPathLabel->setObjectName(QStringLiteral("perlPathLabel"));
+        RTL_memLoadPathLabel = new QLabel(formLayoutWidget);
+        RTL_memLoadPathLabel->setObjectName(QStringLiteral("RTL_memLoadPathLabel"));
 
-        formLayout->setWidget(1, QFormLayout::LabelRole, perlPathLabel);
+        formLayout->setWidget(1, QFormLayout::LabelRole, RTL_memLoadPathLabel);
 
         perlPathLineEdit = new QLineEdit(formLayoutWidget);
         perlPathLineEdit->setObjectName(QStringLiteral("perlPathLineEdit"));
@@ -261,100 +261,100 @@ public:
 
         formLayout->setWidget(2, QFormLayout::LabelRole, pythonPathLabel);
 
-        pythonPathLineEdit = new QLineEdit(formLayoutWidget);
-        pythonPathLineEdit->setObjectName(QStringLiteral("pythonPathLineEdit"));
+        DV_PathLineEdit = new QLineEdit(formLayoutWidget);
+        DV_PathLineEdit->setObjectName(QStringLiteral("DV_PathLineEdit"));
 
-        formLayout->setWidget(2, QFormLayout::FieldRole, pythonPathLineEdit);
+        formLayout->setWidget(2, QFormLayout::FieldRole, DV_PathLineEdit);
 
         lM_LICENSE_FILELabel = new QLabel(formLayoutWidget);
         lM_LICENSE_FILELabel->setObjectName(QStringLiteral("lM_LICENSE_FILELabel"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, lM_LICENSE_FILELabel);
 
-        lM_LICENSE_FILELineEdit = new QLineEdit(formLayoutWidget);
-        lM_LICENSE_FILELineEdit->setObjectName(QStringLiteral("lM_LICENSE_FILELineEdit"));
+        modelsPathLineEdit = new QLineEdit(formLayoutWidget);
+        modelsPathLineEdit->setObjectName(QStringLiteral("modelsPathLineEdit"));
 
-        formLayout->setWidget(3, QFormLayout::FieldRole, lM_LICENSE_FILELineEdit);
+        formLayout->setWidget(3, QFormLayout::FieldRole, modelsPathLineEdit);
 
         lD_PRELOADLabel = new QLabel(formLayoutWidget);
         lD_PRELOADLabel->setObjectName(QStringLiteral("lD_PRELOADLabel"));
 
         formLayout->setWidget(4, QFormLayout::LabelRole, lD_PRELOADLabel);
 
-        lD_PRELOADLineEdit = new QLineEdit(formLayoutWidget);
-        lD_PRELOADLineEdit->setObjectName(QStringLiteral("lD_PRELOADLineEdit"));
+        TB_scriptsPathLineEdit = new QLineEdit(formLayoutWidget);
+        TB_scriptsPathLineEdit->setObjectName(QStringLiteral("TB_scriptsPathLineEdit"));
 
-        formLayout->setWidget(4, QFormLayout::FieldRole, lD_PRELOADLineEdit);
+        formLayout->setWidget(4, QFormLayout::FieldRole, TB_scriptsPathLineEdit);
 
         unisims_verLabel = new QLabel(formLayoutWidget);
         unisims_verLabel->setObjectName(QStringLiteral("unisims_verLabel"));
 
         formLayout->setWidget(5, QFormLayout::LabelRole, unisims_verLabel);
 
-        unisims_verLineEdit = new QLineEdit(formLayoutWidget);
-        unisims_verLineEdit->setObjectName(QStringLiteral("unisims_verLineEdit"));
+        toolScriptsPathLineEdit = new QLineEdit(formLayoutWidget);
+        toolScriptsPathLineEdit->setObjectName(QStringLiteral("toolScriptsPathLineEdit"));
 
-        formLayout->setWidget(5, QFormLayout::FieldRole, unisims_verLineEdit);
+        formLayout->setWidget(5, QFormLayout::FieldRole, toolScriptsPathLineEdit);
 
         secureipLabel = new QLabel(formLayoutWidget);
         secureipLabel->setObjectName(QStringLiteral("secureipLabel"));
 
         formLayout->setWidget(6, QFormLayout::LabelRole, secureipLabel);
 
-        secureipLineEdit = new QLineEdit(formLayoutWidget);
-        secureipLineEdit->setObjectName(QStringLiteral("secureipLineEdit"));
+        suitePathLineEdit = new QLineEdit(formLayoutWidget);
+        suitePathLineEdit->setObjectName(QStringLiteral("suitePathLineEdit"));
 
-        formLayout->setWidget(6, QFormLayout::FieldRole, secureipLineEdit);
+        formLayout->setWidget(6, QFormLayout::FieldRole, suitePathLineEdit);
 
         simprims_verLabel = new QLabel(formLayoutWidget);
         simprims_verLabel->setObjectName(QStringLiteral("simprims_verLabel"));
 
         formLayout->setWidget(7, QFormLayout::LabelRole, simprims_verLabel);
 
-        simprims_verLineEdit = new QLineEdit(formLayoutWidget);
-        simprims_verLineEdit->setObjectName(QStringLiteral("simprims_verLineEdit"));
+        prepFileLineEdit = new QLineEdit(formLayoutWidget);
+        prepFileLineEdit->setObjectName(QStringLiteral("prepFileLineEdit"));
 
-        formLayout->setWidget(7, QFormLayout::FieldRole, simprims_verLineEdit);
+        formLayout->setWidget(7, QFormLayout::FieldRole, prepFileLineEdit);
 
         xilinxcorelib_verLabel = new QLabel(formLayoutWidget);
         xilinxcorelib_verLabel->setObjectName(QStringLiteral("xilinxcorelib_verLabel"));
 
         formLayout->setWidget(8, QFormLayout::LabelRole, xilinxcorelib_verLabel);
 
-        xilinxcorelib_verLineEdit = new QLineEdit(formLayoutWidget);
-        xilinxcorelib_verLineEdit->setObjectName(QStringLiteral("xilinxcorelib_verLineEdit"));
+        postProcFileLineEdit = new QLineEdit(formLayoutWidget);
+        postProcFileLineEdit->setObjectName(QStringLiteral("postProcFileLineEdit"));
 
-        formLayout->setWidget(8, QFormLayout::FieldRole, xilinxcorelib_verLineEdit);
+        formLayout->setWidget(8, QFormLayout::FieldRole, postProcFileLineEdit);
 
         glblPathLabel = new QLabel(formLayoutWidget);
         glblPathLabel->setObjectName(QStringLiteral("glblPathLabel"));
 
         formLayout->setWidget(9, QFormLayout::LabelRole, glblPathLabel);
 
-        glblPathLineEdit = new QLineEdit(formLayoutWidget);
-        glblPathLineEdit->setObjectName(QStringLiteral("glblPathLineEdit"));
+        topModuleLineEdit = new QLineEdit(formLayoutWidget);
+        topModuleLineEdit->setObjectName(QStringLiteral("topModuleLineEdit"));
 
-        formLayout->setWidget(9, QFormLayout::FieldRole, glblPathLineEdit);
+        formLayout->setWidget(9, QFormLayout::FieldRole, topModuleLineEdit);
 
         runDirPathLabel = new QLabel(formLayoutWidget);
         runDirPathLabel->setObjectName(QStringLiteral("runDirPathLabel"));
 
         formLayout->setWidget(10, QFormLayout::LabelRole, runDirPathLabel);
 
-        runDirPathLineEdit = new QLineEdit(formLayoutWidget);
-        runDirPathLineEdit->setObjectName(QStringLiteral("runDirPathLineEdit"));
+        coverEnLineEdit = new QLineEdit(formLayoutWidget);
+        coverEnLineEdit->setObjectName(QStringLiteral("coverEnLineEdit"));
 
-        formLayout->setWidget(10, QFormLayout::FieldRole, runDirPathLineEdit);
+        formLayout->setWidget(10, QFormLayout::FieldRole, coverEnLineEdit);
 
         logDirPathLabel = new QLabel(formLayoutWidget);
         logDirPathLabel->setObjectName(QStringLiteral("logDirPathLabel"));
 
         formLayout->setWidget(11, QFormLayout::LabelRole, logDirPathLabel);
 
-        logDirPathLineEdit = new QLineEdit(formLayoutWidget);
-        logDirPathLineEdit->setObjectName(QStringLiteral("logDirPathLineEdit"));
+        optEnLineEdit = new QLineEdit(formLayoutWidget);
+        optEnLineEdit->setObjectName(QStringLiteral("optEnLineEdit"));
 
-        formLayout->setWidget(11, QFormLayout::FieldRole, logDirPathLineEdit);
+        formLayout->setWidget(11, QFormLayout::FieldRole, optEnLineEdit);
 
         waveDumpLabel = new QLabel(formLayoutWidget);
         waveDumpLabel->setObjectName(QStringLiteral("waveDumpLabel"));
@@ -400,8 +400,8 @@ public:
     {
         Configure->setWindowTitle(QApplication::translate("Configure", "TabWidget", 0));
         simPathLabel_2->setText(QApplication::translate("Configure", "simPath:", 0));
-        simPathLineEdit_2->setText(QString());
-        simPathLineEdit_2->setPlaceholderText(QString());
+        simPathLineEdit->setText(QString());
+        simPathLineEdit->setPlaceholderText(QString());
         perlPathLabel_2->setText(QApplication::translate("Configure", "perlPath:", 0));
         perlPathLineEdit_2->setText(QString());
         pythonPathLabel_2->setText(QApplication::translate("Configure", "pythonPath:", 0));
@@ -416,7 +416,7 @@ public:
         logDirPathLabel_2->setText(QApplication::translate("Configure", "logDirPath:", 0));
         Configure->setTabText(Configure->indexOf(sim_tab), QApplication::translate("Configure", "Simulation Environment", 0));
         simPathLabel->setText(QApplication::translate("Configure", "RTL_path:", 0));
-        perlPathLabel->setText(QApplication::translate("Configure", "RTL_memLoadPath:", 0));
+        RTL_memLoadPathLabel->setText(QApplication::translate("Configure", "RTL_memLoadPath:", 0));
         pythonPathLabel->setText(QApplication::translate("Configure", "DV_path:", 0));
         lM_LICENSE_FILELabel->setText(QApplication::translate("Configure", "modelsPath:", 0));
         lD_PRELOADLabel->setText(QApplication::translate("Configure", "TB_scriptsPath:", 0));
