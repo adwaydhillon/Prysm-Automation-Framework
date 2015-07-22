@@ -14,11 +14,12 @@ class Configure : public QTabWidget
 public:
     explicit Configure(QWidget *parent = 0);
     ~Configure();
+    Ui::Configure *ui;
 
 private slots:
 
 private:
-    Ui::Configure *ui;
+
 };
 
 #endif // CONFIGURE_H
