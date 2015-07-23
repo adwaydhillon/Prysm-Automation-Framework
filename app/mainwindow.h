@@ -31,6 +31,7 @@ private slots:
     void on_runButton_clicked();
     void populateConfigDetails(QString proj_path);
     void on_testSelectionButton_clicked();
+    void populateTestChoices(QString proj_path);
 
 private:
     Ui::MainWindow *ui;

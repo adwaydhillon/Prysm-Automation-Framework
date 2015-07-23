@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QWidget>
 
@@ -21,12 +22,20 @@ QT_BEGIN_NAMESPACE
 class Ui_TestSelection
 {
 public:
+    QWidget *formLayoutWidget;
+    QFormLayout *formLayout;
 
     void setupUi(QWidget *TestSelection)
     {
         if (TestSelection->objectName().isEmpty())
             TestSelection->setObjectName(QStringLiteral("TestSelection"));
-        TestSelection->resize(788, 452);
+        TestSelection->resize(1020, 743);
+        formLayoutWidget = new QWidget(TestSelection);
+        formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
+        formLayoutWidget->setGeometry(QRect(0, 0, 1021, 631));
+        formLayout = new QFormLayout(formLayoutWidget);
+        formLayout->setObjectName(QStringLiteral("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
 
         retranslateUi(TestSelection);
 

@@ -7,9 +7,12 @@
 #include "ui_home.h"
 #include <QHBoxLayout>
 #include "home.h"
+#include <QComboBox>
 #include "configure.h"
 #include "ui_configure.h"
 #include <QFileDialog>
+#include "testselection.h"
+#include "ui_testselection.h"
 #include <QDir>
 #include <string>
 #include <QDebug>
@@ -57,6 +60,7 @@ void MainWindow::on_validateButton_clicked() {
     if (validate_proj(proj_path)) {
         stackedWidget->setCurrentIndex(1);
         populateConfigDetails(proj_path);
+        populateTestChoices(proj_path);
     }
 }
 
@@ -79,14 +83,28 @@ bool MainWindow::validate_proj(QString proj_path) {
 }
 
 void MainWindow::on_testSelectionButton_clicked() {
-
-
-
-
-
+    stackedWidget->setCurrentIndex(3);
 
 
 }
+
+void MainWindow::populateTestChoices(QString proj_path) {
+    //Populating the combo box with test choices
+    QProcess *scrape_config = new QProcess(this);
+    QString exec = "python";
+    QStringList params;
+    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/test_selection.py" << proj_path;
+    scrape_config->start(exec, params);
+    scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
+    QString output(scrape_config->readAllStandardOutput());
+    QRegExp rx("(\\n)"); //RegEx for new line
+    QStringList query = output.split(rx, QString::SkipEmptyParts);
+    QComboBox *test_combo = new QComboBox();
+    test_combo->addItems(query);
+    testselection->ui->formLayout->addRow(test_combo);
+}
+
+
 
 void MainWindow::populateConfigDetails(QString proj_path) {
     //Running the Simulation Environment first
@@ -119,10 +137,11 @@ void MainWindow::populateConfigDetails(QString proj_path) {
 //            qDebug() << "output:    " << path;
 //    }
 
-    QString sim_env_path = proj_path + "/simEnvConfig.yaml";
-    QString test_run_path = proj_path + "/testRunConfig.yaml";
+
+    QRegExp rx("(\\: |\\n)"); //RegEx for ': '
 
     //Running the Simulation Environment first
+    QString sim_env_path = proj_path + "/simEnvConfig.yaml";
     QProcess *scrape_config = new QProcess(this);
     QString exec = "python";
     QStringList params;
@@ -130,25 +149,25 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     scrape_config->start(exec, params);
     scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
     QString output(scrape_config->readAllStandardOutput());
-
-
-    QRegExp rx("(\\: |\\n)"); //RegEx for ': '
     QStringList query = output.split(rx, QString::SkipEmptyParts);
-    foreach (QString s, query) {
-        qDebug() << " indy: " << s;
+    for (int i = 0; i <= query.length() - 2; i = i + 2) {
+         configure->ui->formLayout_2->addRow((query[i]), new QLineEdit(query[i+1]));
     }
-    configure->ui->simPathLineEdit->setText(query[1]);
-    configure->ui->perlPathLineEdit->setText(query[3]);
-    configure->ui->pythonPathLineEdit->setText("");
-    configure->ui->lM_LICENSE_FILELineEdit->setText("");
-    configure->ui->lD_PRELOADLineEdit->setText("");
-    configure->ui->unisims_verLineEdit->setText("");
-    configure->ui->secureipLineEdit->setText("");
-    configure->ui->simprims_verLineEdit->setText("");
-    configure->ui->xilinxcorelib_verLineEdit->setText("");
-    configure->ui->glblPathLineEdit->setText("");
-    configure->ui->runDirPathLineEdit->setText("");
-    configure->ui->logDirPathLineEdit->setText("");
+
+    //Running the Testing Environment
+    QString test_run_path = proj_path + "/testRunConfig.yaml";
+    scrape_config = new QProcess(this);
+    exec = "python";
+    params.clear();
+    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/scrape_config.py" << test_run_path;
+    scrape_config->start(exec, params);
+    scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
+    output.clear();
+    output(scrape_config->readAllStandardOutput());
+    query = output.split(rx, QString::SkipEmptyParts);
+    for (int i = 0; i <= query.length() - 2; i = i + 2) {
+         configure->ui->formLayout->addRow((query[i]), new QLineEdit(query[i+1]));
+    }
 
 }
 
