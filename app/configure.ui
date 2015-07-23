@@ -23,7 +23,7 @@
    <enum>QTabWidget::Rounded</enum>
   </property>
   <property name="currentIndex">
-   <number>1</number>
+   <number>0</number>
   </property>
   <property name="usesScrollButtons">
    <bool>false</bool>
@@ -286,7 +286,7 @@
       <x>0</x>
       <y>0</y>
       <width>1011</width>
-      <height>721</height>
+      <height>461</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
