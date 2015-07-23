@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QWidget>
-#include <QLineEdit>
 #include "home.h"
 #include "validated.h"
 #include <QStackedWidget>
