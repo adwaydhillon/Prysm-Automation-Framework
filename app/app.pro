@@ -15,19 +15,22 @@ SOURCES += main.cpp\
     home.cpp \
     validated.cpp \
     mainwindow.cpp \
-    configure.cpp
+    configure.cpp \
+    testselection.cpp
 
 HEADERS  += \
     home.h \
     validated.h \
     mainwindow.h \
-    configure.h
+    configure.h \
+    testselection.h
 
 FORMS    += \
     home.ui \
     validated.ui \
     mainwindow.ui \
-    configure.ui
+    configure.ui \
+    testselection.ui
 
 RESOURCES += \
     app.qrc

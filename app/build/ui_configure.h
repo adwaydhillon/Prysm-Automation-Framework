@@ -256,6 +256,7 @@ public:
 
         RTL_pathLineEdit = new QLineEdit(formLayoutWidget);
         RTL_pathLineEdit->setObjectName(QStringLiteral("RTL_pathLineEdit"));
+        RTL_pathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, RTL_pathLineEdit);
 
@@ -266,6 +267,7 @@ public:
 
         perlPathLineEdit = new QLineEdit(formLayoutWidget);
         perlPathLineEdit->setObjectName(QStringLiteral("perlPathLineEdit"));
+        perlPathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, perlPathLineEdit);
 
@@ -276,6 +278,7 @@ public:
 
         DV_PathLineEdit = new QLineEdit(formLayoutWidget);
         DV_PathLineEdit->setObjectName(QStringLiteral("DV_PathLineEdit"));
+        DV_PathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, DV_PathLineEdit);
 
@@ -286,6 +289,7 @@ public:
 
         modelsPathLineEdit = new QLineEdit(formLayoutWidget);
         modelsPathLineEdit->setObjectName(QStringLiteral("modelsPathLineEdit"));
+        modelsPathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, modelsPathLineEdit);
 
@@ -296,6 +300,7 @@ public:
 
         TB_scriptsPathLineEdit = new QLineEdit(formLayoutWidget);
         TB_scriptsPathLineEdit->setObjectName(QStringLiteral("TB_scriptsPathLineEdit"));
+        TB_scriptsPathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(4, QFormLayout::FieldRole, TB_scriptsPathLineEdit);
 
@@ -306,6 +311,7 @@ public:
 
         toolScriptsPathLineEdit = new QLineEdit(formLayoutWidget);
         toolScriptsPathLineEdit->setObjectName(QStringLiteral("toolScriptsPathLineEdit"));
+        toolScriptsPathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(5, QFormLayout::FieldRole, toolScriptsPathLineEdit);
 
@@ -316,6 +322,7 @@ public:
 
         suitePathLineEdit = new QLineEdit(formLayoutWidget);
         suitePathLineEdit->setObjectName(QStringLiteral("suitePathLineEdit"));
+        suitePathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(6, QFormLayout::FieldRole, suitePathLineEdit);
 
@@ -326,6 +333,7 @@ public:
 
         prepFileLineEdit = new QLineEdit(formLayoutWidget);
         prepFileLineEdit->setObjectName(QStringLiteral("prepFileLineEdit"));
+        prepFileLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(7, QFormLayout::FieldRole, prepFileLineEdit);
 
@@ -336,6 +344,7 @@ public:
 
         postProcFileLineEdit = new QLineEdit(formLayoutWidget);
         postProcFileLineEdit->setObjectName(QStringLiteral("postProcFileLineEdit"));
+        postProcFileLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(8, QFormLayout::FieldRole, postProcFileLineEdit);
 
@@ -346,6 +355,7 @@ public:
 
         topModuleLineEdit = new QLineEdit(formLayoutWidget);
         topModuleLineEdit->setObjectName(QStringLiteral("topModuleLineEdit"));
+        topModuleLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(9, QFormLayout::FieldRole, topModuleLineEdit);
 
@@ -356,6 +366,7 @@ public:
 
         coverEnLineEdit = new QLineEdit(formLayoutWidget);
         coverEnLineEdit->setObjectName(QStringLiteral("coverEnLineEdit"));
+        coverEnLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(10, QFormLayout::FieldRole, coverEnLineEdit);
 
@@ -366,6 +377,7 @@ public:
 
         optEnLineEdit = new QLineEdit(formLayoutWidget);
         optEnLineEdit->setObjectName(QStringLiteral("optEnLineEdit"));
+        optEnLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(11, QFormLayout::FieldRole, optEnLineEdit);
 
@@ -376,6 +388,7 @@ public:
 
         waveDumpLineEdit = new QLineEdit(formLayoutWidget);
         waveDumpLineEdit->setObjectName(QStringLiteral("waveDumpLineEdit"));
+        waveDumpLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(12, QFormLayout::FieldRole, waveDumpLineEdit);
 
@@ -386,6 +399,7 @@ public:
 
         modeLineEdit = new QLineEdit(formLayoutWidget);
         modeLineEdit->setObjectName(QStringLiteral("modeLineEdit"));
+        modeLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(13, QFormLayout::FieldRole, modeLineEdit);
 

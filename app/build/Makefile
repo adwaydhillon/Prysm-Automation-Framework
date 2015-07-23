@@ -52,21 +52,25 @@ SOURCES       = ../main.cpp \
 		../home.cpp \
 		../validated.cpp \
 		../mainwindow.cpp \
-		../configure.cpp qrc_app.cpp \
+		../configure.cpp \
+		../testselection.cpp qrc_app.cpp \
 		moc_home.cpp \
 		moc_validated.cpp \
 		moc_mainwindow.cpp \
-		moc_configure.cpp
+		moc_configure.cpp \
+		moc_testselection.cpp
 OBJECTS       = main.o \
 		home.o \
 		validated.o \
 		mainwindow.o \
 		configure.o \
+		testselection.o \
 		qrc_app.o \
 		moc_home.o \
 		moc_validated.o \
 		moc_mainwindow.o \
-		moc_configure.o
+		moc_configure.o \
+		moc_testselection.o
 DIST          = /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/qdevice.pri \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/features/device_config.prf \
@@ -204,11 +208,13 @@ DIST          = /Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/feature
 		../../app.pro ../home.h \
 		../validated.h \
 		../mainwindow.h \
-		../configure.h ../main.cpp \
+		../configure.h \
+		../testselection.h ../main.cpp \
 		../home.cpp \
 		../validated.cpp \
 		../mainwindow.cpp \
-		../configure.cpp
+		../configure.cpp \
+		../testselection.cpp
 QMAKE_TARGET  = app
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = app.app/Contents/MacOS/app
@@ -246,7 +252,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_home.h ui_validated.h ui_mainwindow.h ui_configure.h $(OBJECTS)  
+$(TARGET): ui_home.h ui_validated.h ui_mainwindow.h ui_configure.h ui_testselection.h $(OBJECTS)  
 	@test -d app.app/Contents/MacOS/ || mkdir -p app.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -559,9 +565,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../app.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../home.h ../validated.h ../mainwindow.h ../configure.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../main.cpp ../home.cpp ../validated.cpp ../mainwindow.cpp ../configure.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../home.ui ../validated.ui ../mainwindow.ui ../configure.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../home.h ../validated.h ../mainwindow.h ../configure.h ../testselection.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../main.cpp ../home.cpp ../validated.cpp ../mainwindow.cpp ../configure.cpp ../testselection.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../home.ui ../validated.ui ../mainwindow.ui ../configure.ui ../testselection.ui $(DISTDIR)/
 
 
 clean:compiler_clean 
@@ -595,9 +601,9 @@ qrc_app.cpp: ../app.qrc \
 		../res/prysm_bg_3.png
 	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/rcc -name app ../app.qrc -o qrc_app.cpp
 
-compiler_moc_header_make_all: moc_home.cpp moc_validated.cpp moc_mainwindow.cpp moc_configure.cpp
+compiler_moc_header_make_all: moc_home.cpp moc_validated.cpp moc_mainwindow.cpp moc_configure.cpp moc_testselection.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_home.cpp moc_validated.cpp moc_mainwindow.cpp moc_configure.cpp
+	-$(DEL_FILE) moc_home.cpp moc_validated.cpp moc_mainwindow.cpp moc_configure.cpp moc_testselection.cpp
 moc_home.cpp: /Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QStackedWidget \
@@ -620,6 +626,10 @@ moc_mainwindow.cpp: /Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidge
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QPushButton \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qpushbutton.h \
 		../validated.h \
+		../configure.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTabWidget \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtabwidget.h \
+		../testselection.h \
 		../mainwindow.h
 	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/macx-clang -I/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/app -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib ../mainwindow.h -o moc_mainwindow.cpp
 
@@ -628,11 +638,16 @@ moc_configure.cpp: /Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidget
 		../configure.h
 	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/macx-clang -I/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/app -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib ../configure.h -o moc_configure.cpp
 
+moc_testselection.cpp: /Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		../testselection.h
+	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/mkspecs/macx-clang -I/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/app -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtGui.framework/Headers -I/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib ../testselection.h -o moc_testselection.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_home.h ui_validated.h ui_mainwindow.h ui_configure.h
+compiler_uic_make_all: ui_home.h ui_validated.h ui_mainwindow.h ui_configure.h ui_testselection.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_home.h ui_validated.h ui_mainwindow.h ui_configure.h
+	-$(DEL_FILE) ui_home.h ui_validated.h ui_mainwindow.h ui_configure.h ui_testselection.h
 ui_home.h: ../home.ui
 	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/uic ../home.ui -o ui_home.h
 
@@ -644,6 +659,9 @@ ui_mainwindow.h: ../mainwindow.ui
 
 ui_configure.h: ../configure.ui
 	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/uic ../configure.ui -o ui_configure.h
+
+ui_testselection.h: ../testselection.ui
+	/Users/adwaydhillon/Applications/QT/5.4/clang_64/bin/uic ../testselection.ui -o ui_testselection.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -666,13 +684,14 @@ main.o: ../main.cpp ../mainwindow.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QPushButton \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qpushbutton.h \
 		../validated.h \
+		../configure.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTabWidget \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtabwidget.h \
+		../testselection.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
-		../configure.h \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTabWidget \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtabwidget.h
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../main.cpp
 
 home.o: ../home.cpp ../home.h \
@@ -724,14 +743,15 @@ mainwindow.o: ../mainwindow.cpp ../mainwindow.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QPushButton \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qpushbutton.h \
 		../validated.h \
+		../configure.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTabWidget \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtabwidget.h \
+		../testselection.h \
 		ui_mainwindow.h \
 		ui_validated.h \
 		ui_home.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QHBoxLayout \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qboxlayout.h \
-		../configure.h \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTabWidget \
-		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtabwidget.h \
 		ui_configure.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
@@ -753,6 +773,12 @@ configure.o: ../configure.cpp ../configure.h \
 		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdir.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o configure.o ../configure.cpp
 
+testselection.o: ../testselection.cpp ../testselection.h \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
+		/Users/adwaydhillon/Applications/QT/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		ui_testselection.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o testselection.o ../testselection.cpp
+
 qrc_app.o: qrc_app.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_app.o qrc_app.cpp
 
@@ -767,6 +793,9 @@ moc_mainwindow.o: moc_mainwindow.cpp
 
 moc_configure.o: moc_configure.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_configure.o moc_configure.cpp
+
+moc_testselection.o: moc_testselection.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_testselection.o moc_testselection.cpp
 
 ####### Install
 

@@ -6,12 +6,14 @@
 #include "validated.h"
 #include <QStackedWidget>
 #include "configure.h"
+#include "testselection.h"
 
 namespace Ui {
 class MainWindow;
 class Validated;
 class Home;
 class Configure;
+class TestSelection;
 }
 
 class MainWindow : public QWidget
@@ -28,12 +30,14 @@ private slots:
     bool validate_proj(QString file_path);
     void on_runButton_clicked();
     void populateConfigDetails(QString proj_path);
+    void on_testSelectionButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     Home *home;
     Validated *validated;
     Configure *configure;
+    TestSelection *testselection;
     QStackedWidget *stackedWidget;
 };
 

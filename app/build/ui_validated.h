@@ -138,7 +138,7 @@ public:
         label_4->setText(QApplication::translate("Validated", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#ffffff;\">Project path validated!</span></p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-size:24pt; font-weight:600; color:#ffffff;\">Choose an option:</span></p></body></html>", 0));
         configureButton->setText(QApplication::translate("Validated", "Configure", 0));
         label_3->setText(QString());
-        runButton->setText(QApplication::translate("Validated", "Run", 0));
+        runButton->setText(QApplication::translate("Validated", "Create Script", 0));
         viewReportsButton->setText(QApplication::translate("Validated", "View Reports", 0));
         testSelectionButton->setText(QApplication::translate("Validated", "Suite/Test Selection", 0));
     } // retranslateUi
