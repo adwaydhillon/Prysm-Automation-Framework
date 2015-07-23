@@ -109,6 +109,7 @@ void MainWindow::populateTestChoices(QString proj_path) {
     QStringList query = output.split(rx, QString::SkipEmptyParts);
     QComboBox *test_combo = new QComboBox();
     test_combo->addItems(query);
+    test_combo->setCurrentText("Select Option");
     testselection->ui->formLayout->addRow(test_combo);
 }
 
@@ -159,7 +160,9 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     QString output(scrape_config->readAllStandardOutput());
     QStringList query = output.split(rx, QString::SkipEmptyParts); 
     for (int i = 0; i <= query.length() - 2; i = i + 2) {
-         configure->ui->formLayout_2->addRow((query[i]), new QLineEdit(query[i+1]));
+         QLineEdit *tempLineEdit = new QLineEdit(query[i+1]);
+         tempLineEdit->setFixedWidth(500);
+         configure->ui->formLayout_2->addRow((query[i]), tempLineEdit);
     }
 
     //Running the Testing Environment
@@ -173,7 +176,9 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     QString new_output(scrape_config->readAllStandardOutput());
     query = new_output.split(rx, QString::SkipEmptyParts);
     for (int i = 0; i <= query.length() - 2; i = i + 2) {
-         configure->ui->formLayout->addRow((query[i]), new QLineEdit(query[i+1]));
+        QLineEdit *tempLineEdit = new QLineEdit(query[i+1]);
+        tempLineEdit->setFixedWidth(500);
+        configure->ui->formLayout->addRow((query[i]), tempLineEdit);
     }
 }
 
