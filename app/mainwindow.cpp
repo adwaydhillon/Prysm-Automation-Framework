@@ -99,56 +99,56 @@ void MainWindow::populateConfigDetails(QString proj_path) {
 //    QString output(scrape_config->readAllStandardOutput());
 
 //    QDir application_dir = QDir( QDir::currentPath());
-    QString path = QString(QDir::currentPath());
-    QStringList list = path.split("/");
-    QStringList params;
-    QProcess *change_dir = new QProcess(this);
-    while (list[list.length() - 1] != "Prysm_Automation_Framework") {
-            QString exec = "cd";
-            params << "..";
-            change_dir->start(exec, params);
-            change_dir->waitForFinished();
-
-            exec = "pwd";
-            QStringList params;
-            params << "";
-            change_dir->start(exec, params);
-            change_dir->waitForFinished();
-            QString path(change_dir->readAllStandardOutput());
-            list = path.split("/");
-            qDebug() << "output:    " << path;
-    }
-
-//    QString sim_env_path = proj_path + "/simEnvConfig.yaml";
-//    QString test_run_path = proj_path + "/testRunConfig.yaml";
-
-//    //Running the Simulation Environment first
-//    QProcess *scrape_config = new QProcess(this);
-//    QString exec = "python";
+//    QString path = QString(QDir::currentPath());
+//    QStringList list = path.split("/");
 //    QStringList params;
-//    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/scrape_config.py" << sim_env_path;
-//    scrape_config->start(exec, params);
-//    scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
-//    QString output(scrape_config->readAllStandardOutput());
+//    QProcess *change_dir = new QProcess(this);
+//    while (list[list.length() - 1] != "Prysm_Automation_Framework") {
+//            QString exec = "cd";
+//            params << "..";
+//            change_dir->start(exec, params);
+//            change_dir->waitForFinished();
 
-
-//    QRegExp rx("(\\: )"); //RegEx for ' ' or ',' or '.' or ':' or '\t'
-//    QStringList query = output.split(rx, QString::SkipEmptyParts);
-//    foreach (QString s, query) {
-//        qDebug() << "indy: " << s;
+//            exec = "pwd";
+//            QStringList params;
+//            params << "";
+//            change_dir->start(exec, params);
+//            change_dir->waitForFinished();
+//            QString path(change_dir->readAllStandardOutput());
+//            list = path.split("/");
+//            qDebug() << "output:    " << path;
 //    }
-//    configure->ui->simPathLineEdit->setText(query[1]);
-//    configure->ui->perlPathLineEdit->setText(query[3]);
-//    configure->ui->pythonPathLineEdit->setText("");
-//    configure->ui->lM_LICENSE_FILELineEdit->setText("");
-//    configure->ui->lD_PRELOADLineEdit->setText("");
-//    configure->ui->unisims_verLineEdit->setText("");
-//    configure->ui->secureipLineEdit->setText("");
-//    configure->ui->simprims_verLineEdit->setText("");
-//    configure->ui->xilinxcorelib_verLineEdit->setText("");
-//    configure->ui->glblPathLineEdit->setText("");
-//    configure->ui->runDirPathLineEdit->setText("");
-//    configure->ui->logDirPathLineEdit->setText("");
+
+    QString sim_env_path = proj_path + "/simEnvConfig.yaml";
+    QString test_run_path = proj_path + "/testRunConfig.yaml";
+
+    //Running the Simulation Environment first
+    QProcess *scrape_config = new QProcess(this);
+    QString exec = "python";
+    QStringList params;
+    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/scrape_config.py" << sim_env_path;
+    scrape_config->start(exec, params);
+    scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
+    QString output(scrape_config->readAllStandardOutput());
+
+
+    QRegExp rx("(\\: )"); //RegEx for ' ' or ',' or '.' or ':' or '\t'
+    QStringList query = output.split(rx, QString::SkipEmptyParts);
+    foreach (QString s, query) {
+        qDebug() << "indy: " << s;
+    }
+    configure->ui->simPathLineEdit->setText(query[1].split(" ")[0]);
+    configure->ui->perlPathLineEdit->setText(query[3]);
+    configure->ui->pythonPathLineEdit->setText("");
+    configure->ui->lM_LICENSE_FILELineEdit->setText("");
+    configure->ui->lD_PRELOADLineEdit->setText("");
+    configure->ui->unisims_verLineEdit->setText("");
+    configure->ui->secureipLineEdit->setText("");
+    configure->ui->simprims_verLineEdit->setText("");
+    configure->ui->xilinxcorelib_verLineEdit->setText("");
+    configure->ui->glblPathLineEdit->setText("");
+    configure->ui->runDirPathLineEdit->setText("");
+    configure->ui->logDirPathLineEdit->setText("");
 
 }
 
