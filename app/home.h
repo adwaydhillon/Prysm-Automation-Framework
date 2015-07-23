@@ -15,7 +15,6 @@ class Home : public QWidget
 
 public:
     explicit Home(QWidget *parent = 0);
-//        Ui::Home * ui() const { return ui; }
     Ui::Home *ui;
 
     ~Home();

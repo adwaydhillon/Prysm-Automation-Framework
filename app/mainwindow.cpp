@@ -20,9 +20,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
 //    ui->setupUi(this);
-    Validated *validated = new Validated();
-    Home *home = new Home();
-    Configure *configure = new Configure();
+    validated = new Validated();
+    home = new Home();
+    configure = new Configure();
 
     stackedWidget = new QStackedWidget;
     stackedWidget->addWidget(home);
@@ -53,7 +53,6 @@ void MainWindow::on_validateButton_clicked() {
                                                     );
 
     if (validate_proj(proj_path)) {
-        qDebug() << "File Path:" << proj_path;
         stackedWidget->setCurrentIndex(1);
         populateConfigDetails(proj_path);
     }
@@ -89,7 +88,26 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     scrape_config->start(exec, params);
     scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
     QString output(scrape_config->readAllStandardOutput());
-    qDebug() << output;
+
+
+    QRegExp rx("(\\: )"); //RegEx for ' ' or ',' or '.' or ':' or '\t'
+    QStringList query = output.split(rx, QString::SkipEmptyParts);
+    foreach (QString s, query) {
+        qDebug() << "indy: " << s;
+    }
+    configure->ui->simPathLineEdit->setText(query[1]);
+    configure->ui->perlPathLineEdit->setText(query[3]);
+    configure->ui->pythonPathLineEdit->setText("");
+    configure->ui->lM_LICENSE_FILELineEdit->setText("");
+    configure->ui->lD_PRELOADLineEdit->setText("");
+    configure->ui->unisims_verLineEdit->setText("");
+    configure->ui->secureipLineEdit->setText("");
+    configure->ui->simprims_verLineEdit->setText("");
+    configure->ui->xilinxcorelib_verLineEdit->setText("");
+    configure->ui->glblPathLineEdit->setText("");
+    configure->ui->runDirPathLineEdit->setText("");
+    configure->ui->logDirPathLineEdit->setText("");
+
 }
 
 void MainWindow::on_configureButton_clicked() {

@@ -5,11 +5,13 @@
 #include "home.h"
 #include "validated.h"
 #include <QStackedWidget>
+#include "configure.h"
 
 namespace Ui {
 class MainWindow;
 class Validated;
 class Home;
+class Configure;
 }
 
 class MainWindow : public QWidget
@@ -29,8 +31,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    Ui::Home *home;
-    Ui::Validated *validated;
+    Home *home;
+    Validated *validated;
+    Configure *configure;
     QStackedWidget *stackedWidget;
 };
 
