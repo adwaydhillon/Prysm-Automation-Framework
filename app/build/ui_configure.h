@@ -114,6 +114,8 @@ public:
 
         simPathLineEdit = new QLineEdit(formLayoutWidget_2);
         simPathLineEdit->setObjectName(QStringLiteral("simPathLineEdit"));
+        simPathLineEdit->setMinimumSize(QSize(500, 0));
+        simPathLineEdit->setMaximumSize(QSize(350, 16777215));
 
         formLayout_2->setWidget(0, QFormLayout::FieldRole, simPathLineEdit);
 
@@ -124,6 +126,7 @@ public:
 
         perlPathLineEdit_2 = new QLineEdit(formLayoutWidget_2);
         perlPathLineEdit_2->setObjectName(QStringLiteral("perlPathLineEdit_2"));
+        perlPathLineEdit_2->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(1, QFormLayout::FieldRole, perlPathLineEdit_2);
 
@@ -134,6 +137,7 @@ public:
 
         pythonPathLineEdit = new QLineEdit(formLayoutWidget_2);
         pythonPathLineEdit->setObjectName(QStringLiteral("pythonPathLineEdit"));
+        pythonPathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(2, QFormLayout::FieldRole, pythonPathLineEdit);
 
@@ -144,6 +148,7 @@ public:
 
         lM_LICENSE_FILELineEdit = new QLineEdit(formLayoutWidget_2);
         lM_LICENSE_FILELineEdit->setObjectName(QStringLiteral("lM_LICENSE_FILELineEdit"));
+        lM_LICENSE_FILELineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(4, QFormLayout::FieldRole, lM_LICENSE_FILELineEdit);
 
@@ -154,6 +159,7 @@ public:
 
         lD_PRELOADLineEdit = new QLineEdit(formLayoutWidget_2);
         lD_PRELOADLineEdit->setObjectName(QStringLiteral("lD_PRELOADLineEdit"));
+        lD_PRELOADLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(5, QFormLayout::FieldRole, lD_PRELOADLineEdit);
 
@@ -164,6 +170,7 @@ public:
 
         unisims_verLineEdit = new QLineEdit(formLayoutWidget_2);
         unisims_verLineEdit->setObjectName(QStringLiteral("unisims_verLineEdit"));
+        unisims_verLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(6, QFormLayout::FieldRole, unisims_verLineEdit);
 
@@ -174,6 +181,7 @@ public:
 
         secureipLineEdit = new QLineEdit(formLayoutWidget_2);
         secureipLineEdit->setObjectName(QStringLiteral("secureipLineEdit"));
+        secureipLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(7, QFormLayout::FieldRole, secureipLineEdit);
 
@@ -184,6 +192,7 @@ public:
 
         simprims_verLineEdit = new QLineEdit(formLayoutWidget_2);
         simprims_verLineEdit->setObjectName(QStringLiteral("simprims_verLineEdit"));
+        simprims_verLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(8, QFormLayout::FieldRole, simprims_verLineEdit);
 
@@ -194,6 +203,7 @@ public:
 
         xilinxcorelib_verLineEdit = new QLineEdit(formLayoutWidget_2);
         xilinxcorelib_verLineEdit->setObjectName(QStringLiteral("xilinxcorelib_verLineEdit"));
+        xilinxcorelib_verLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(9, QFormLayout::FieldRole, xilinxcorelib_verLineEdit);
 
@@ -204,6 +214,7 @@ public:
 
         glblPathLineEdit = new QLineEdit(formLayoutWidget_2);
         glblPathLineEdit->setObjectName(QStringLiteral("glblPathLineEdit"));
+        glblPathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(10, QFormLayout::FieldRole, glblPathLineEdit);
 
@@ -214,6 +225,7 @@ public:
 
         runDirPathLineEdit = new QLineEdit(formLayoutWidget_2);
         runDirPathLineEdit->setObjectName(QStringLiteral("runDirPathLineEdit"));
+        runDirPathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(11, QFormLayout::FieldRole, runDirPathLineEdit);
 
@@ -224,6 +236,7 @@ public:
 
         logDirPathLineEdit = new QLineEdit(formLayoutWidget_2);
         logDirPathLineEdit->setObjectName(QStringLiteral("logDirPathLineEdit"));
+        logDirPathLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout_2->setWidget(12, QFormLayout::FieldRole, logDirPathLineEdit);
 

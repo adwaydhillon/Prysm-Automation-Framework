@@ -63,6 +63,18 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="simPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>350</width>
+         <height>16777215</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -80,6 +92,12 @@
      </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="perlPathLineEdit_2">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -93,7 +111,14 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="pythonPathLineEdit"/>
+      <widget class="QLineEdit" name="pythonPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="4" column="0">
       <widget class="QLabel" name="lM_LICENSE_FILELabel_2">
@@ -103,7 +128,14 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLineEdit" name="lM_LICENSE_FILELineEdit"/>
+      <widget class="QLineEdit" name="lM_LICENSE_FILELineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="5" column="0">
       <widget class="QLabel" name="lD_PRELOADLabel_2">
@@ -113,7 +145,14 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QLineEdit" name="lD_PRELOADLineEdit"/>
+      <widget class="QLineEdit" name="lD_PRELOADLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="unisims_verLabel_2">
@@ -123,7 +162,14 @@
       </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QLineEdit" name="unisims_verLineEdit"/>
+      <widget class="QLineEdit" name="unisims_verLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="7" column="0">
       <widget class="QLabel" name="secureipLabel_2">
@@ -133,7 +179,14 @@
       </widget>
      </item>
      <item row="7" column="1">
-      <widget class="QLineEdit" name="secureipLineEdit"/>
+      <widget class="QLineEdit" name="secureipLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="8" column="0">
       <widget class="QLabel" name="simprims_verLabel_2">
@@ -143,7 +196,14 @@
       </widget>
      </item>
      <item row="8" column="1">
-      <widget class="QLineEdit" name="simprims_verLineEdit"/>
+      <widget class="QLineEdit" name="simprims_verLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="9" column="0">
       <widget class="QLabel" name="xilinxcorelib_verLabel_2">
@@ -153,7 +213,14 @@
       </widget>
      </item>
      <item row="9" column="1">
-      <widget class="QLineEdit" name="xilinxcorelib_verLineEdit"/>
+      <widget class="QLineEdit" name="xilinxcorelib_verLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="10" column="0">
       <widget class="QLabel" name="glblPathLabel_2">
@@ -163,7 +230,14 @@
       </widget>
      </item>
      <item row="10" column="1">
-      <widget class="QLineEdit" name="glblPathLineEdit"/>
+      <widget class="QLineEdit" name="glblPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="11" column="0">
       <widget class="QLabel" name="runDirPathLabel_2">
@@ -173,7 +247,14 @@
       </widget>
      </item>
      <item row="11" column="1">
-      <widget class="QLineEdit" name="runDirPathLineEdit"/>
+      <widget class="QLineEdit" name="runDirPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="12" column="0">
       <widget class="QLabel" name="logDirPathLabel_2">
@@ -183,7 +264,14 @@
       </widget>
      </item>
      <item row="12" column="1">
-      <widget class="QLineEdit" name="logDirPathLineEdit"/>
+      <widget class="QLineEdit" name="logDirPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -210,7 +298,14 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="RTL_pathLineEdit"/>
+      <widget class="QLineEdit" name="RTL_pathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="RTL_memLoadPathLabel">
@@ -220,7 +315,14 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="perlPathLineEdit"/>
+      <widget class="QLineEdit" name="perlPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="pythonPathLabel">
@@ -230,7 +332,14 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="DV_PathLineEdit"/>
+      <widget class="QLineEdit" name="DV_PathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="lM_LICENSE_FILELabel">
@@ -240,7 +349,14 @@
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="modelsPathLineEdit"/>
+      <widget class="QLineEdit" name="modelsPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="4" column="0">
       <widget class="QLabel" name="lD_PRELOADLabel">
@@ -250,7 +366,14 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLineEdit" name="TB_scriptsPathLineEdit"/>
+      <widget class="QLineEdit" name="TB_scriptsPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="5" column="0">
       <widget class="QLabel" name="unisims_verLabel">
@@ -260,7 +383,14 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QLineEdit" name="toolScriptsPathLineEdit"/>
+      <widget class="QLineEdit" name="toolScriptsPathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="secureipLabel">
@@ -270,7 +400,14 @@
       </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QLineEdit" name="suitePathLineEdit"/>
+      <widget class="QLineEdit" name="suitePathLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="7" column="0">
       <widget class="QLabel" name="simprims_verLabel">
@@ -280,7 +417,14 @@
       </widget>
      </item>
      <item row="7" column="1">
-      <widget class="QLineEdit" name="prepFileLineEdit"/>
+      <widget class="QLineEdit" name="prepFileLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="8" column="0">
       <widget class="QLabel" name="xilinxcorelib_verLabel">
@@ -290,7 +434,14 @@
       </widget>
      </item>
      <item row="8" column="1">
-      <widget class="QLineEdit" name="postProcFileLineEdit"/>
+      <widget class="QLineEdit" name="postProcFileLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="9" column="0">
       <widget class="QLabel" name="glblPathLabel">
@@ -300,7 +451,14 @@
       </widget>
      </item>
      <item row="9" column="1">
-      <widget class="QLineEdit" name="topModuleLineEdit"/>
+      <widget class="QLineEdit" name="topModuleLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="10" column="0">
       <widget class="QLabel" name="runDirPathLabel">
@@ -310,7 +468,14 @@
       </widget>
      </item>
      <item row="10" column="1">
-      <widget class="QLineEdit" name="coverEnLineEdit"/>
+      <widget class="QLineEdit" name="coverEnLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="11" column="0">
       <widget class="QLabel" name="logDirPathLabel">
@@ -320,7 +485,14 @@
       </widget>
      </item>
      <item row="11" column="1">
-      <widget class="QLineEdit" name="optEnLineEdit"/>
+      <widget class="QLineEdit" name="optEnLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="12" column="0">
       <widget class="QLabel" name="waveDumpLabel">
@@ -330,7 +502,14 @@
       </widget>
      </item>
      <item row="12" column="1">
-      <widget class="QLineEdit" name="waveDumpLineEdit"/>
+      <widget class="QLineEdit" name="waveDumpLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="13" column="0">
       <widget class="QLabel" name="modeLabel">
@@ -340,7 +519,14 @@
       </widget>
      </item>
      <item row="13" column="1">
-      <widget class="QLineEdit" name="modeLineEdit"/>
+      <widget class="QLineEdit" name="modeLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item row="14" column="0">
       <widget class="QLabel" name="simResFileLabel">
