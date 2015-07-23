@@ -149,7 +149,7 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     scrape_config->start(exec, params);
     scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
     QString output(scrape_config->readAllStandardOutput());
-    QStringList query = output.split(rx, QString::SkipEmptyParts);
+    QStringList query = output.split(rx, QString::SkipEmptyParts); 
     for (int i = 0; i <= query.length() - 2; i = i + 2) {
          configure->ui->formLayout_2->addRow((query[i]), new QLineEdit(query[i+1]));
     }
@@ -162,9 +162,8 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/scrape_config.py" << test_run_path;
     scrape_config->start(exec, params);
     scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
-    output.clear();
-    output(scrape_config->readAllStandardOutput());
-    query = output.split(rx, QString::SkipEmptyParts);
+    QString new_output(scrape_config->readAllStandardOutput());
+    query = new_output.split(rx, QString::SkipEmptyParts);
     for (int i = 0; i <= query.length() - 2; i = i + 2) {
          configure->ui->formLayout->addRow((query[i]), new QLineEdit(query[i+1]));
     }
