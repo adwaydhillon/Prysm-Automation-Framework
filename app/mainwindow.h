@@ -29,6 +29,7 @@ private slots:
     void on_configureButton_clicked();
     bool validate_proj(QString file_path);
     void on_runButton_clicked();
+    void on_viewReportsButton_clicked();
     void populateConfigDetails(QString proj_path);
     void on_testSelectionButton_clicked();
     void populateTestChoices(QString proj_path);

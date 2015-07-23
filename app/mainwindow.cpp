@@ -39,7 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(home->ui->validateButton, SIGNAL(clicked()), this, SLOT(on_validateButton_clicked()));
     connect(validated->ui->configureButton, SIGNAL(clicked()), this, SLOT(on_configureButton_clicked()));
     connect(validated->ui->testSelectionButton, SIGNAL(clicked()), this, SLOT(on_testSelectionButton_clicked()));
-//    connect(validated->ui->viewReportsButton, SIGNAL(clicked()), this, SLOT(on_viewReportsButton_clicked()));
+    connect(validated->ui->viewReportsButton, SIGNAL(clicked()), this, SLOT(on_viewReportsButton_clicked()));
     connect(validated->ui->runButton, SIGNAL(clicked()), this, SLOT(on_runButton_clicked()));
 
 
