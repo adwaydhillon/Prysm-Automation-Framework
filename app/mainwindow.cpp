@@ -182,19 +182,19 @@ void MainWindow::on_configureButton_clicked() {
 }
 
 void MainWindow::on_runButton_clicked() {
-    //Running the backend python script
-    QProcess *scrape_config = new QProcess(this);
-    QString exec = "python";
-    QStringList params;
-    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/test_selection.py" << proj_path;
-    scrape_config->start(exec, params);
-    scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
-    QString output(scrape_config->readAllStandardOutput());
-    QRegExp rx("(\\n)"); //RegEx for new line
-    QStringList query = output.split(rx, QString::SkipEmptyParts);
-    QComboBox *test_combo = new QComboBox();
-    test_combo->addItems(query);
-    testselection->ui->formLayout->addRow(test_combo);
+//    //Running the backend python script
+//    QProcess *scrape_config = new QProcess(this);
+//    QString exec = "python";
+//    QStringList params;
+//    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/scripts/test_selection.py" << proj_path;
+//    scrape_config->start(exec, params);
+//    scrape_config->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
+//    QString output(scrape_config->readAllStandardOutput());
+//    QRegExp rx("(\\n)"); //RegEx for new line
+//    QStringList query = output.split(rx, QString::SkipEmptyParts);
+//    QComboBox *test_combo = new QComboBox();
+//    test_combo->addItems(query);
+//    testselection->ui->formLayout->addRow(test_combo);
 }
 
 
