@@ -197,8 +197,6 @@ void MainWindow::on_runButton_clicked() {
 //    testselection->ui->formLayout->addRow(test_combo);
 }
 
-
-
 MainWindow::~MainWindow()
 {
     delete ui;
