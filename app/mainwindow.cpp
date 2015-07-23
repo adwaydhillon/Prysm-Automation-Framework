@@ -94,8 +94,6 @@ bool MainWindow::validate_proj(QString proj_path) {
 
 void MainWindow::on_testSelectionButton_clicked() {
     stackedWidget->setCurrentIndex(3);
-
-
 }
 
 void MainWindow::populateTestChoices(QString proj_path) {
@@ -181,7 +179,6 @@ void MainWindow::populateConfigDetails(QString proj_path) {
 
 void MainWindow::on_configureButton_clicked() {
         stackedWidget->setCurrentIndex(2);
-//        TODO
 }
 
 void MainWindow::on_runButton_clicked() {
