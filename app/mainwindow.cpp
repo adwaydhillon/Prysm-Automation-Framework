@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include "home.h"
 #include <QComboBox>
+#include <QLineEdit>
 #include "configure.h"
 #include "ui_configure.h"
 #include <QFileDialog>
@@ -167,7 +168,6 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     for (int i = 0; i <= query.length() - 2; i = i + 2) {
          configure->ui->formLayout->addRow((query[i]), new QLineEdit(query[i+1]));
     }
-
 }
 
 void MainWindow::on_configureButton_clicked() {
