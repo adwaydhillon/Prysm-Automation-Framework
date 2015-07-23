@@ -49,6 +49,15 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowTitle(tr("FPGA Simulation Environment"));
 }
 
+void MainWindow::on_viewReportsButton_clicked() {
+    QProcess *view_report = new QProcess(this);
+    QString exec = "open";
+    QStringList params;
+    params << "/Users/adwaydhillon/Documents/Development/Prysm_Automation_Framework/HTML/prysm_output.html";
+    view_report->start(exec, params);
+    view_report->waitForFinished(); // sets current thread to sleep and waits for is_valid to end
+}
+
 void MainWindow::on_validateButton_clicked() {
 
     QString proj_path = QFileDialog::getExistingDirectory(
