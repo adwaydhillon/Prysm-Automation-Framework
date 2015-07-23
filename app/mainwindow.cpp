@@ -132,12 +132,12 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     QString output(scrape_config->readAllStandardOutput());
 
 
-    QRegExp rx("(\\: )"); //RegEx for ' ' or ',' or '.' or ':' or '\t'
+    QRegExp rx("(\\: |\\n)"); //RegEx for ': '
     QStringList query = output.split(rx, QString::SkipEmptyParts);
     foreach (QString s, query) {
-        qDebug() << "indy: " << s;
+        qDebug() << " indy: " << s;
     }
-    configure->ui->simPathLineEdit->setText(query[1].split(" ")[0]);
+    configure->ui->simPathLineEdit->setText(query[1]);
     configure->ui->perlPathLineEdit->setText(query[3]);
     configure->ui->pythonPathLineEdit->setText("");
     configure->ui->lM_LICENSE_FILELineEdit->setText("");

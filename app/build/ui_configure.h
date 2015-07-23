@@ -245,7 +245,7 @@ public:
         run_tab->setObjectName(QStringLiteral("run_tab"));
         formLayoutWidget = new QWidget(run_tab);
         formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(0, 0, 1011, 721));
+        formLayoutWidget->setGeometry(QRect(0, 0, 1011, 461));
         formLayout = new QFormLayout(formLayoutWidget);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
@@ -410,6 +410,7 @@ public:
 
         simResFileLineEdit = new QLineEdit(formLayoutWidget);
         simResFileLineEdit->setObjectName(QStringLiteral("simResFileLineEdit"));
+        simResFileLineEdit->setMinimumSize(QSize(500, 0));
 
         formLayout->setWidget(14, QFormLayout::FieldRole, simResFileLineEdit);
 
@@ -417,7 +418,7 @@ public:
 
         retranslateUi(Configure);
 
-        Configure->setCurrentIndex(0);
+        Configure->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Configure);

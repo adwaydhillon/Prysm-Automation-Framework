@@ -55,7 +55,7 @@
     </property>
     <layout class="QFormLayout" name="formLayout_2">
      <item row="0" column="0">
-      <widget class="QLabel" name="simPathLabel_2">
+      <widget class="QLabel" name="simPathLabel">
        <property name="text">
         <string>simPath:</string>
        </property>
@@ -84,7 +84,7 @@
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="perlPathLabel_2">
+      <widget class="QLabel" name="perlPathLabel">
        <property name="text">
         <string>perlPath:</string>
        </property>
@@ -104,7 +104,7 @@
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QLabel" name="pythonPathLabel_2">
+      <widget class="QLabel" name="pythonPathLabel">
        <property name="text">
         <string>pythonPath:</string>
        </property>
@@ -121,7 +121,7 @@
       </widget>
      </item>
      <item row="4" column="0">
-      <widget class="QLabel" name="lM_LICENSE_FILELabel_2">
+      <widget class="QLabel" name="lM_LICENSE_FILELabel">
        <property name="text">
         <string>LM_LICENSE_FILE:</string>
        </property>
@@ -138,7 +138,7 @@
       </widget>
      </item>
      <item row="5" column="0">
-      <widget class="QLabel" name="lD_PRELOADLabel_2">
+      <widget class="QLabel" name="lD_PRELOADLabel">
        <property name="text">
         <string>LD_PRELOAD:</string>
        </property>
@@ -155,7 +155,7 @@
       </widget>
      </item>
      <item row="6" column="0">
-      <widget class="QLabel" name="unisims_verLabel_2">
+      <widget class="QLabel" name="unisims_verLabel">
        <property name="text">
         <string>unisims_ver:</string>
        </property>
@@ -172,7 +172,7 @@
       </widget>
      </item>
      <item row="7" column="0">
-      <widget class="QLabel" name="secureipLabel_2">
+      <widget class="QLabel" name="secureipLabel">
        <property name="text">
         <string>secureip:</string>
        </property>
@@ -189,7 +189,7 @@
       </widget>
      </item>
      <item row="8" column="0">
-      <widget class="QLabel" name="simprims_verLabel_2">
+      <widget class="QLabel" name="simprims_verLabel">
        <property name="text">
         <string>simprims_ver:</string>
        </property>
@@ -206,7 +206,7 @@
       </widget>
      </item>
      <item row="9" column="0">
-      <widget class="QLabel" name="xilinxcorelib_verLabel_2">
+      <widget class="QLabel" name="xilinxcorelib_verLabel">
        <property name="text">
         <string>xilinxcorelib_ver:</string>
        </property>
@@ -223,7 +223,7 @@
       </widget>
      </item>
      <item row="10" column="0">
-      <widget class="QLabel" name="glblPathLabel_2">
+      <widget class="QLabel" name="glblPathLabel">
        <property name="text">
         <string>glblPath:</string>
        </property>
@@ -240,7 +240,7 @@
       </widget>
      </item>
      <item row="11" column="0">
-      <widget class="QLabel" name="runDirPathLabel_2">
+      <widget class="QLabel" name="runDirPathLabel">
        <property name="text">
         <string>runDirPath:</string>
        </property>
@@ -257,7 +257,7 @@
       </widget>
      </item>
      <item row="12" column="0">
-      <widget class="QLabel" name="logDirPathLabel_2">
+      <widget class="QLabel" name="logDirPathLabel">
        <property name="text">
         <string>logDirPath:</string>
        </property>
@@ -291,7 +291,7 @@
     </property>
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="simPathLabel">
+      <widget class="QLabel" name="RTL_pathLabel">
        <property name="text">
         <string>RTL_path:</string>
        </property>
@@ -325,7 +325,7 @@
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QLabel" name="pythonPathLabel">
+      <widget class="QLabel" name="DV_PathLabel">
        <property name="text">
         <string>DV_path:</string>
        </property>
@@ -342,7 +342,7 @@
       </widget>
      </item>
      <item row="3" column="0">
-      <widget class="QLabel" name="lM_LICENSE_FILELabel">
+      <widget class="QLabel" name="modelsPathLabel">
        <property name="text">
         <string>modelsPath:</string>
        </property>
@@ -359,7 +359,7 @@
       </widget>
      </item>
      <item row="4" column="0">
-      <widget class="QLabel" name="lD_PRELOADLabel">
+      <widget class="QLabel" name="TB_scriptsPathLabel">
        <property name="text">
         <string>TB_scriptsPath:</string>
        </property>
@@ -376,7 +376,7 @@
       </widget>
      </item>
      <item row="5" column="0">
-      <widget class="QLabel" name="unisims_verLabel">
+      <widget class="QLabel" name="toolScriptsPathLabel">
        <property name="text">
         <string>toolScriptsPath:</string>
        </property>
@@ -393,7 +393,7 @@
       </widget>
      </item>
      <item row="6" column="0">
-      <widget class="QLabel" name="secureipLabel">
+      <widget class="QLabel" name="suitePathLabel">
        <property name="text">
         <string>suitePath:</string>
        </property>
@@ -410,7 +410,7 @@
       </widget>
      </item>
      <item row="7" column="0">
-      <widget class="QLabel" name="simprims_verLabel">
+      <widget class="QLabel" name="prepFileLabel">
        <property name="text">
         <string>prepFile:</string>
        </property>
@@ -427,7 +427,7 @@
       </widget>
      </item>
      <item row="8" column="0">
-      <widget class="QLabel" name="xilinxcorelib_verLabel">
+      <widget class="QLabel" name="postProcFileLabel">
        <property name="text">
         <string>postProcFile:</string>
        </property>
@@ -444,7 +444,7 @@
       </widget>
      </item>
      <item row="9" column="0">
-      <widget class="QLabel" name="glblPathLabel">
+      <widget class="QLabel" name="topModuleLabel">
        <property name="text">
         <string>topModule:</string>
        </property>
@@ -461,7 +461,7 @@
       </widget>
      </item>
      <item row="10" column="0">
-      <widget class="QLabel" name="runDirPathLabel">
+      <widget class="QLabel" name="coverEnLabel">
        <property name="text">
         <string>coverEn:</string>
        </property>
@@ -478,7 +478,7 @@
       </widget>
      </item>
      <item row="11" column="0">
-      <widget class="QLabel" name="logDirPathLabel">
+      <widget class="QLabel" name="optEnLabel">
        <property name="text">
         <string>optEn:</string>
        </property>
