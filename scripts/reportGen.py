@@ -86,6 +86,7 @@ def readFile(fileName):
             header_list.append(header.lstrip().rstrip())
         header_list = str(header_list)
         columns_order = '(' + header_list[1:len(header_list)-1] + ')'
+#    print description
     maintain_tally(description, table_data, columns_order)
         
 def maintain_tally(description, table_data, columns_order):
@@ -103,6 +104,7 @@ def maintain_tally(description, table_data, columns_order):
     for test_status in tally:
         list_tally.append([test_status, tally[test_status]])
 
+    print columns_order
     insert_in_template(description, table_data, list_tally, columns_order)
 
 def insert_in_template(description, table_data, list_tally, column_order):

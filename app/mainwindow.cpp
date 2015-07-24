@@ -182,7 +182,7 @@ void MainWindow::populateConfigDetails(QString proj_path) {
     }
 }
 
-void `MainWindow::on_configureButton_clicked() {
+void MainWindow::on_configureButton_clicked() {
         stackedWidget->setCurrentIndex(2);
 }
 
